@@ -36,7 +36,6 @@
                   <label><input type="radio" name="division" value="" checked>日東駒専</label>
                   <label><input type="radio" name="division" value="" checked>その他</label>
             </div>
-
             <div class="schoolarea">
                   <p>学校エリア</p>
                   <select name="schoolerea">

@@ -21,4 +21,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/toppage', 'TopController@showTopPage');
+Route::get('/toppage', 'TopController@showTopPage')->name('top');
+// Route::post('/toppage', 'TopController@getTopPage');

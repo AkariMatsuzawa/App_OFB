@@ -99,7 +99,14 @@
                     <br>
                     <br>
                     <br>
-                    <input type="submit" value="検索する">
+                    {{-- 検索ボタンを作る --}}
+                      <form action="/" method="">
+                        @csrf
+                        <button type='submit' class="top_btn">検索する</button>
+                      </form>
+
+                      
+                      
     </div>
     <div class="top-right">
             <table class="row">

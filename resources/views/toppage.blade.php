@@ -100,9 +100,9 @@
                     <br>
                     <br>
                     {{-- 検索ボタンを作る --}}
-                      <form action="/" method="">
+                      <form action="/searchpage" method="GET">
                         @csrf
-                        <button type='submit' class="top_btn">検索する</button>
+                        <button  type='submit' class="top_btn">検索する</button>
                       </form>
 
                       

@@ -22,4 +22,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/toppage', 'TopController@showTopPage')->name('top');
-// Route::post('/toppage', 'TopController@getTopPage');
+Route::get('/searchpage', 'SearchController@showSearchPage')->name('search');
+Route::get('/offerpage', 'OfferController@showOfferPage')->name('offerpage');
+Route::get('/favoritepage', 'FavoriteController@showFavoritePage')->name('favoritepage');

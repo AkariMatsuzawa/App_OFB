@@ -117,6 +117,11 @@
                   <tr><td>私をみて</td></tr>
                     
                   <tr><th>管理する</th></tr>
+                  {{-- 選考管理リストボタンを作る --}}
+                  <form action="/management_page" method="GET">
+                    @csrf
+                    <button  type='submit' class="top_btn">選考管理リスト</button>
+                  </form>
                   <tr><td>選考管理リスト</td></tr>
 
                   <tr><th>設定</th></tr>

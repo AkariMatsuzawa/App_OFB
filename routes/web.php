@@ -25,3 +25,6 @@ Route::get('/toppage', 'TopController@showTopPage')->name('top');
 Route::get('/searchpage', 'SearchController@showSearchPage')->name('search');
 Route::get('/offerpage', 'OfferController@showOfferPage')->name('offerpage');
 Route::get('/favoritepage', 'FavoriteController@showFavoritePage')->name('favoritepage');
+Route::get('/management_page', 'ManagementController@showManagement_Page')->name('management_page');
+
+

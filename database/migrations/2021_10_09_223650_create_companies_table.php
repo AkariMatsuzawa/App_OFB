@@ -19,17 +19,17 @@ class CreateCompaniesTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('address')->unique();
-            $table->string('phone')->unique();
-            $table->string('listing_classification');
-            $table->string('place');
-            $table->string('industry');
-            $table->string('type');
-            $table->integer('employees');
-            $table->string('manager');
-            $table->string('logo');
-            $table->rememberToken();
-            $table->timestamps();
+            // $table->string('address')->unique();
+            // $table->string('phone')->unique();
+            // $table->string('listing_classification');
+            // $table->string('place');
+            // $table->string('industry');
+            // $table->string('type');
+            // $table->integer('employees');
+            // $table->string('manager');
+            // $table->string('logo');
+            // $table->rememberToken();
+            // $table->timestamps();
         });
     }
 

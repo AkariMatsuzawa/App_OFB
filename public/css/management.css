@@ -1,0 +1,42 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.up{
+  padding: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.pic{
+  padding-right:300px;
+}
+
+.pro{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* .btn_detail{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+} */
+
+.down{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+.sum{
+  padding: 150px;
+  border: 1px solid black;
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-bottom: 50px;
+}

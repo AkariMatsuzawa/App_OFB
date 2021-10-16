@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\Company as Authenticatable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
 class Company extends Authenticatable
@@ -16,7 +16,7 @@ class Company extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','address','phone','logo','listing_classification','place','industry','type','employees','manager'
+        'name', 'email', 'password',
         ];
 
     /**
@@ -59,6 +59,12 @@ class Company extends Authenticatable
     public function management_lists()
     {
         return $this->hasMany('App\management_list');
+
+    }
+
+    public function company_details()
+    {
+        return $this->hasOne('App\company_details');
 
     }
 }

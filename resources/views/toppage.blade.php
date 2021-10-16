@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -6,8 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>OfferBox</title>
   <link rel="stylesheet" href="{{ asset('css/toppage.css') }}">
-</head>
-<body>
+</head> --}}
+@extends('layouts.app')
+
+{{-- <body> --}}
+@section('content')
+<link rel="stylesheet" href="{{ asset('css/toppage.css') }}">
   <div class="top">
     <div class="top-left">
           <div class="login_date">
@@ -117,20 +121,31 @@
                   <tr><td>私をみて</td></tr>
                     
                   <tr><th>管理する</th></tr>
-                  {{-- 選考管理リストボタンを作る --}}
-                  <form action="/management_page" method="GET">
-                    @csrf
-                    <button  type='submit' class="top_btn">選考管理リスト</button>
-                  </form>
                   <tr><td>選考管理リスト</td></tr>
-
                   <tr><th>設定</th></tr>
                   <tr><td>基本設定</td></tr>
                   <tr><td>募集要項設定</td></tr>
                   <tr><td>オプション設定</td></tr> 
              </table>
+             <form action="/management_page" method="GET">
+                  @csrf
+                  <button  type='submit' class="top_btn">選考管理リスト</button>
+                </form>
+
+                <form action="/favorite_listpage" method="GET">
+                  @csrf
+                  <button  type='submit' class="favorite_list">検討中リスト</button>
+                </form>
+
+                <form action="/setuppage" method="GET">
+                  @csrf
+                  <button  type='submit' class="setup">企業基本情報</button>
+                </form>
+
+
     </div>
 　</div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-</body>
-</html>
+{{-- </body>
+</html> --}}
+@endsection

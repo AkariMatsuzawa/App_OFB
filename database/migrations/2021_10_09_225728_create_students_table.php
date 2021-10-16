@@ -23,6 +23,7 @@ class CreateStudentsTable extends Migration
             $table->string('birthdate');
             $table->string('phone')->unique();
             $table->string('univercity');
+            $table->string('univercity_group');
             $table->string('faculty');
             $table->string('subject');
             $table->integer('year');

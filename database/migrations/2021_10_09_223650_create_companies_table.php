@@ -28,8 +28,8 @@ class CreateCompaniesTable extends Migration
             // $table->integer('employees');
             // $table->string('manager');
             // $table->string('logo');
-            // $table->rememberToken();
-            // $table->timestamps();
+            $table->rememberToken();
+            $table->timestamps();
         });
     }
 

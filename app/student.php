@@ -7,6 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class student extends Model
 {
     //
+
+    protected $fillable = [
+        'name', 'email', 'address','birthplace','birthdate','phone','univercity','univercity_group','faculty','subject','year','club_activities','qualification','p_language','gender','highschool','icon'
+        ];
+
+
     public function offers()
     {
         return $this->hasMany('App\offer');

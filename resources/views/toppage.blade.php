@@ -35,10 +35,11 @@
 
             <div class="division">
                   <p>学校区分</p>
-                  <label><input type="radio" name="division" value="">国公立・早慶</label>
-                  <label><input type="radio" name="division" value="">MARCH・関関同立</label>
-                  <label><input type="radio" name="division" value="" checked>日東駒専</label>
-                  <label><input type="radio" name="division" value="" checked>その他</label>
+                  <label><input type="radio" name="division" value="">国公立クラス</label>
+                  <label><input type="radio" name="division" value="">早慶・上智クラス</label>
+                  <label><input type="radio" name="division" value="">MARCH・関関同立クラス</label>
+                  <label><input type="radio" name="division" value="" checked>日東駒専クラス</label>
+                  <label><input type="radio" name="division" value="" checked>その他クラス</label>
             </div>
             <div class="schoolarea">
                   <p>学校エリア</p>

@@ -39,9 +39,12 @@
       大学名
       </div>
     </div>
-
-    <form action="/toppage" method="GET">
+    
+    {{-- 以下の（）内はルーティングに記載した名前。 --}}
+    <form action="{{ route('sendpage'.create) }}" method="POST">
       @csrf
+      {{-- サニタイジング防止（Javascriotからの攻撃） --}}
+      <input type="text" name="text">
       <button  type='submit' class="offer">トップへ</button>
     </form>
 

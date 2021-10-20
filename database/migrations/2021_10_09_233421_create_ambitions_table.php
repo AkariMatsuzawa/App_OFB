@@ -19,6 +19,7 @@ class CreateAmbitionsTable extends Migration
             $table->string('work');
             $table->string('place');
             $table->string('type');
+            $table->integer('student_id')->unique();
             $table->timestamps();
         });
     }

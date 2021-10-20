@@ -78,7 +78,6 @@ class StudentsTableSeeder extends Seeder
                 'icon' => '',
                 'created_at' => new Datetime(),
                 'updated_at' => new Datetime()
-
              ],
              [
                 'name' => '高野 和馬',
@@ -117,7 +116,7 @@ class StudentsTableSeeder extends Seeder
                 'year' => '2023',
                 'club_activities' => 'コンピューター',
                 'qualification' => '',
-                'p_language' => 'C++','C#','python',
+                'p_language' => 'C++',
                 'gender' => '男性',
                 'highschool' => '上越高校',
                 'icon' => '',

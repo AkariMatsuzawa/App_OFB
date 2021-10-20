@@ -52,9 +52,9 @@
            <div class="form">
             <input type="text">縦長フォームにしたい
           </div>
-          <form action="/testpage" method="POST">
+          <form action="/sendpage" method="POST">
             @csrf
-            <button  type='submit' class="test">確認ページへ</button>
+              <button  type='submit' class="test">確認ページへ</button>
           </form>
         </div>
     </div>

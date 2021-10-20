@@ -21,18 +21,18 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/toppage', 'TopController@showTopPage')->name('top');
-Route::get('/searchpage', 'SearchController@showSearchPage')->name('search');
-Route::get('/listpage', 'ListController@showListPage')->name('list');
-Route::get('/offerpage', 'OfferController@showOfferPage')->name('offerpage');
-Route::post('/testpage', 'TestController@showTestPage')->name('testpage');
-Route::post('/sendpage', 'SendController@showSendPage')->name('sendpage');
-Route::get('/favoritepage', 'FavoriteController@showFavoritePage')->name('favoritepage');
-Route::get('/favorite_listpage', 'Favorite_listController@showFavorite_listPage')->name('favorite_listpage');
-Route::get('/management_page', 'ManagementController@showManagement_Page')->name('management_page');
-Route::get('/chatpage', 'ChatController@showChatPage')->name('chatpage');
+Route::get('/toppage', 'TopController@showTopPage')->name('top.show');
+Route::get('/searchpage', 'SearchController@showSearchPage')->name('searchpage');
+Route::get('/listpage', 'ListController@showListPage')->name('list.show');
+Route::get('/offerpage', 'OfferController@showOfferPage')->name('offerpage.show');
+// Route::get('/testpage', 'TestController@editTestPage')->name('testpage.edit');
+Route::post('/sendpage', 'SendController@createSendPage')->name('sendpage.create');
+Route::get('/favoritepage', 'FavoriteController@showFavoritePage')->name('favoritepage.show');
+Route::get('/favorite_listpage', 'Favorite_listController@showFavorite_listPage')->name('favorite_listpage.show');
+Route::get('/management_page', 'ManagementController@showManagement_Page')->name('management_page.show');
+Route::get('/chatpage', 'ChatController@showChatPage')->name('chatpage.show');
 
-Route::get('/setuppage', 'SetupController@showSetupPage')->name('setuppage');
+Route::get('/setuppage', 'SetupController@showSetupPage')->name('setuppage.show');
 
 
 

@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class offer extends Model
 {
     //
+    protected $fillable = [
+        'comnapy_id','text',
+
+    ];
 
     public function company()
     {

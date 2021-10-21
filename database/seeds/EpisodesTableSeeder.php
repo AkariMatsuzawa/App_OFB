@@ -12,7 +12,7 @@ class EpisodesTableSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('spisodes')->insert([
+        DB::table('episodes')->insert([
             [
                 'student_id' => 1,
                 'text1' => 'hoge',

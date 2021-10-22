@@ -11,16 +11,16 @@ use Illuminate\Http\Request;
 class SearchController extends Controller
 {
     
-    // public function showSearchPage()
-    // {
-    //     // studentsテーブルからデータを全部取ってく。dd確認済み。
-    //     $students = Student::all();
-    //     return view ('searchpage', compact('students'));
+    public function showSearchPage()
+    {
+        // studentsテーブルからデータを全部取ってく。dd確認済み。
+        $students = Student::all();
+        return view ('searchpage', compact('students'));
 
       
-    // }
+    }
 
-    public function showSearchpage(Request $request)
+    public function index(Request $request)
 {
     $univercity = $request->input("univercity");
     

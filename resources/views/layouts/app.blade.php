@@ -64,6 +64,12 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
+
+                                    {{-- //toppageへ戻るボタン --}}
+                                    <form action="/toppage" method="GET">
+                                        @csrf
+                                          <button  type='submit' class="back">トップへ</button>
+                                      </form>
                                 </div>
                             </li>
                         @endguest

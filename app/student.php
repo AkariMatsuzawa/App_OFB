@@ -50,7 +50,7 @@ class student extends Model
 
     public function likedBy($company)
     {
-        return Favorite::where('company_id', $company->id)->where('favorite_id', $this->id);
+        return Favorite::where('company_id', $company->id)->where('student_id', $this->id);
     }
 
 

@@ -41,11 +41,15 @@
     </div>
     
     {{-- 以下の（）内はルーティングに記載した名前。 --}}
-    <form action="{{ route('sendpage'.create) }}" method="POST">
+    <form action="{{ route('sendpage.store') }}" method="POST">
       @csrf
       {{-- サニタイジング防止（Javascriotからの攻撃） --}}
-      <input type="text" name="text">
-      <button  type='submit' class="offer">トップへ</button>
+      {{-- <input type="text" name="text">
+      <button  type='submit' class="offer">トップへ</button> --}}
+    </form>
+    <form action="/toppage" method="GET">
+      @csrf
+        <button  type='submit' class="test">トップへ</button>
     </form>
 
 

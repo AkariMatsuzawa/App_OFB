@@ -73,7 +73,12 @@
             <form action=""><input type="text"></form>
           </div>
 
-          <button>設定</button>
+          {{-- <button>設定</button> --}}
+          <form action="/createpage" method="POST">
+            @csrf
+            <input type="text" name="company">
+            <button  type='submit' class="setup_btn">設定</button>
+          </form>
     </div>
 
 

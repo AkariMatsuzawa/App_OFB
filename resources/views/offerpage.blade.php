@@ -49,15 +49,36 @@
             </div>
 
         <div class="right">
-           <div class="form">
-            <input type="text">縦長フォームにしたい
-          </div>
           <form action="/sendpage" method="POST">
             @csrf
-              <button  type='submit' class="test">確認ページへ</button>
-          </form>
-        </div>
-    </div>
-  
+           <div class="form">
+            <input type="text" name="offer">縦長フォームにしたい
+            <button  type='submit' class="test">オファー送信</button>
+          </div>
 
+           {{-- 以下の（）内はルーティングに記載した名前。 --}}
+    <form action="{{ route('sendpage.store') }}" method="POST">
+      @csrf
+      <div class="post-box">
+        <input type="text" name="offer" placeholder="オファー文入力">
+        <button type='submit' class="submit_btn">オファー送信</button>
+      </div>
+    </form>
+    {{-- <form action="/toppage" method="GET">
+        
+    </form> --}}
+
+    {{-- <div class="offer-wrapper">
+      @foreach($offers as $offer)
+      <div class="offer-box">
+        <div>{{ $offers->$offer }}</div>
+      </div>
+      <div class="destroy-btn">
+        <form action="{{ route('destroy', [$offer->id]) }}" method="post">
+      </div>
+      @csrf
+      <input type="submit" value="削除">
+    </form>
+    </div>
+    @endforeach --}}
   @endsection

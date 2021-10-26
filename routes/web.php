@@ -22,7 +22,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/toppage', 'TopController@showTopPage')->name('top.show');
-Route::get('/searchpage', 'SearchController@showSearchPage')->name('searchpage');
+Route::post('/searchpage', 'SearchController@storeSearchPage')->name('searchpage.store');
 Route::get('/listpage', 'ListController@showListPage')->name('list.show');
 Route::get('/offerpage', 'OfferController@showOfferPage')->name('offerpage.show');
 // Route::get('/testpage', 'TestController@editTestPage')->name('testpage.edit');

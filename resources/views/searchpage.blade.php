@@ -5,13 +5,13 @@
   <link rel="stylesheet" href="{{ asset('css/search.css') }}">
 
    <h2>検索結果一覧</h2>
-   @foreach ($students as $student_narrows)
+   @foreach ($students as $student)
    <div class="sum">
         <div class="up">
             <div class="pic">
               写真入る
             </div>
-            <div class="pro">{{ $student_narrows->univercity }}
+            <div class="pro">{{ $student->univercity }}
             {{-- 大学名
             学部学科
             性別：◯ --}}

@@ -14,6 +14,8 @@
 <link rel="stylesheet" href="{{ asset('css/toppage.css') }}">
   <div class="top">
     <div class="top-left">
+      <form action="/searchpage" method="post">
+            @csrf
           <div class="login_date">
                 <p>ログイン日時</p>
                 <select name="login">
@@ -31,6 +33,7 @@
                   <label><input type="radio" name="gender" value="male">男性</label>
                   <label><input type="radio" name="gender" value="female">女性</label>
                   <label><input type="radio" name="gender" value="none" checked>その他</label>
+                  
             </div>
 
             <div class="division">
@@ -40,6 +43,7 @@
                   <label><input type="radio" name="division" value="">MARCH・関関同立クラス</label>
                   <label><input type="radio" name="division" value="" checked>日東駒専クラス</label>
                   <label><input type="radio" name="division" value="" checked>その他クラス</label>
+
             </div>
             <div class="schoolarea">
                   <p>学校エリア</p>
@@ -99,13 +103,15 @@
                     <option value="">施工管理</option>
                     <option value="">販売</option>
                     </select>
-              </div>
+                   </div>
+
+      {{-- </form> --}}
 
                     <br>
                     <br>
                     <br>
                     {{-- 検索ボタンを作る --}}
-                      <form action="/searchpage" method="GET">
+                      {{-- <form action="/searchpage" method="POST"> --}}
                         @csrf
                         <button  type='submit' class="top_btn">検索する</button>
                       </form>

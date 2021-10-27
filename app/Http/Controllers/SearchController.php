@@ -14,14 +14,16 @@ class SearchController extends Controller
     public function storeSearchPage(Request $request)
     {
         //viewから送られてくきたものが$requestの中に入ってきている
-        dd($request);
+        // dd($request);
         // studentsテーブルからデータを全部取ってく。dd確認済み。
         // $students = Student::all();
         // return view ('searchpage', compact('students'));
         // 検索条件を仮置きtoppageから送られてきたものが入るようにする。
     $gender = '男性';
+    $industry = '';
     $work = '企画・マーケティング';
     $univercity_group = '日東駒専クラス';
+    $place = '';
     // studentテーブルのレコード数を確認,IDカラムの最大値を取ってくる
     $max_id = Student::max('id');
 
@@ -56,8 +58,7 @@ class SearchController extends Controller
     }
     
     // dd($student_narrows);
-    // 仮置きの検索条件を変えながらdd();で内容の確認をお願い致します。
-    
+
         return view ('searchpage',['students' => $student_narrows]);
         //'student'は今ここで初めて定義してる。$がないけど変数扱い。searchpageのURLに$student_narrowsを送る。（'student'を定義しないといけないというルールになってる）
     }

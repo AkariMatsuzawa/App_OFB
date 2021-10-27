@@ -7,34 +7,49 @@ use Illuminate\Http\Request;
 use App\Offer;
 use App\Student;
 use App\Company;
+use Illuminate\Support\Facades\Auth;
+//Auth使いますよって定型文。
 
 
 class SendController extends Controller
 {
     //
-    public function storeSendPage()
-    {
-        $offers = Offer::latest()->get();
-        return view ('sendpage', ['texts' => $offers]);
+    // public function storeSendPage()
+    // {
+    //     $offers = Offer::latest()->get();
+    //     return view ('sendpage', ['texts' => $offers]);
 
         
-    }
+    // }
 
 
     // 以下、viewファイルのフォームをPOST送信で送り、name属性の値に実際のテキストが入る。$requestがフォームの中身になる。
     //Requestは、ブラウザを通してユーザーから送られる情報を全て含んでいるオブジェクトのこと。$requestに引き継いでいる。（フォームで入力された値のこと）
-    public function postOffer(Request $request)
+    // public function postOffer(Request $request)
+    // {
+    //     $validator = $request->validate([
+    //         'text' => ['required', 'string', 'max:800'],
+    //     ]);
+
+    //     Offer::create([
+    //         'company_id' => Auth::user()->id,
+    //         'student_id' => 1,
+    //         'text' => $request -> offer,
+    //     ]);
+
+    //     return  back();
+    // }
+    public function storeSendpage(Request $request)
     {
-        $validator = $request->validate([
-            'text' => ['required', 'string', 'max:800'],
-        ]);
+        $id = Auth::id();
 
         Offer::create([
-            'company_id' => Auth::user()->id,
+            'company_id' => 1,
+            'text' => 'オファー文です',
             'student_id' => 1,
-            'text' => $request -> offer,
-        ]);
+            'date' => '2021-10-26 13:49:53',
 
-        return  back();
+        ]);
+        return view ('sendpage');
     }
 }

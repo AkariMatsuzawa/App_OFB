@@ -11,10 +11,11 @@
             <div class="pic">
               写真入る
             </div>
-            <div class="pro">{{ $student->univercity }}
-            {{-- 大学名
-            学部学科
-            性別：◯ --}}
+            <div class="pro">
+              {{ $student->univercity }}
+              {{ $student->faculty }}
+              {{ $student->subject }}
+              {{ $student->gender }}
             </div>
          </div>
         <div class="down">

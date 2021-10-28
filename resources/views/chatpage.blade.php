@@ -74,6 +74,13 @@
     <div class="btn_send">
       <button>送信する</button>
     </div>
+    <form action="{{ route('chatpage.store') }}" method="POST">
+      @csrf
+      <div class="post-box">
+        <input type="text" name="chat" placeholder="メッセージ入力">
+        <button type='submit' class="submit_btn">メッセージ送信</button>
+      </div>
+    </form>
 
 
   @endsection

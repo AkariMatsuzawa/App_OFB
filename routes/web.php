@@ -31,7 +31,7 @@ Route::post('/sendpage', 'SendController@storeSendPage')->name('sendpage.store')
 Route::get('/favoritepage', 'FavoriteController@showFavoritePage')->name('favoritepage.show');
 // Route::get('/favorite_listpage', 'Favorite_listController@showFavorite_listPage')->name('favorite_listpage.show');
 Route::get('/management_page', 'ManagementController@showManagement_Page')->name('management_page.show');
-Route::get('/chatpage', 'ChatController@showChatPage')->name('chatpage.show');
+Route::post('/chatpage', 'ChatController@StoreChatPage')->name('chatpage.store');
 
 
 Route::get('/setuppage', 'SetupController@showSetupPage')->name('setuppage.show');

@@ -15,8 +15,8 @@ class CreateManagementListsTable extends Migration
     {
         Schema::create('management_lists', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('company_id')->unique();
-            $table->integer('student_id')->unique();
+            $table->integer('company_id');
+            $table->integer('student_id');
             $table->string('name');
             $table->string('icon');
             $table->string('birthplace');

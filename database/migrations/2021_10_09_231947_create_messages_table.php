@@ -17,8 +17,8 @@ class CreateMessagesTable extends Migration
             $table->increments('id');
             $table->string('text');
             $table->dateTime('date');
-            $table->integer('company_id')->unique();
-            $table->integer('student_id')->unique();
+            $table->integer('company_id');
+            $table->integer('student_id');
             $table->timestamps();
         });
     }

@@ -15,7 +15,7 @@ class CreateCompanyDetailsTable extends Migration
     {
         Schema::create('company_details', function (Blueprint $table) {
             $table->id();
-            $table->integer('company_id')->unique();
+            $table->integer('company_id');
             $table->string('name');
             $table->string('address')->unique();
             $table->string('phone')->unique();

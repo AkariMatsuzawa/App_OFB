@@ -18,7 +18,11 @@
             </div>
 
             <button class="offer">オファーする</button>
-            <button class="favorite">検討する</button>
+            {{-- <button class="favorite">検討する</button> --}}
+            <form action="/favoritepage" method="GET">
+              @csrf
+              <button  type='submit' class="btn_details">検討する</button>
+            </form>
 
             <div class="pic">
               任意で写真はいる
@@ -45,7 +49,11 @@
             <p>志望職種第1〜第3</p>
 
             <button class="offer">オファーする</button>
-            <button class="favorite">検討する</button>
+            {{-- <button class="favorite">検討する</button> --}}
+            <form action="/favoritepage" method="GET">
+              @csrf
+              <button  type='submit' class="btn_details">検討する</button>
+            </form>
             </div>
 
         <div class="right">

@@ -20,7 +20,7 @@ class CreateEpisodesTable extends Migration
             $table->string('text3')->nullable();
             $table->string('reserch_content')->nullable();
             $table->string('future_image')->nullable();
-            $table->integer('student_id')->unique();
+            $table->integer('student_id');
             $table->timestamps();
         });
     }

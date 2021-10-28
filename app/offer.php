@@ -8,7 +8,7 @@ class offer extends Model
 {
     //
     protected $fillable = [
-        'comnapy_id','text',
+        'company_id','student_id','text',
 
     ];
 

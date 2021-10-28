@@ -45,7 +45,7 @@ class SendController extends Controller
 
         Offer::create([
             'company_id' => 1,
-            'text' => 'オファー文です',
+            'text' => $request->offer,
             'student_id' => 1,
             'date' => '2021-10-26 13:49:53',
 

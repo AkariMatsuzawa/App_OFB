@@ -9,7 +9,7 @@ class favorite extends Model
     //
 
     protected $fillable = [
-        'company_id','student_id','date',
+        'company_id','student_id',
     ];
 
     public function company()

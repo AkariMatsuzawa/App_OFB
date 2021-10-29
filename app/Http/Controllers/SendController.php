@@ -42,12 +42,12 @@ class SendController extends Controller
     public function storeSendpage(Request $request)
     {
         $id = Auth::id();
+        //Authは認証機能（Authorizeの略）
 
         Offer::create([
-            'company_id' => 1,
+            'company_id' => $id,
             'text' => $request->offer,
             'student_id' => 1,
-            'date' => '',
 
         ]);
         return view ('sendpage');

@@ -11,54 +11,56 @@ use Illuminate\Http\Request;
 class SearchController extends Controller
 {
 
-    public function index (Request $request)
-    {
-        dd($request);
-        $gender = $request->input('gender');
-        $industry = $request->input('industry');
-        $work = $request->input('work');
-        $univercity_group = $request->input('univercity_group');
-        $place = $request->input('place');
-        // studentテーブルのレコード数を確認,IDカラムの最大値を取ってくる
-        $max_id = Student::max('id');
+    // public function index (Request $request)
+    // {
+    //     dd($request);
+    //     $gender = $request->input('gender');
+    //     $industry = $request->input('industry');
+    //     $work = $request->input('work');
+    //     $univercity_group = $request->input('univercity_group');
+    //     $place = $request->input('place');
+    //     // studentテーブルのレコード数を確認,IDカラムの最大値を取ってくる
+    //     $max_id = Student::max('id');
 
-        $query = Student::query();
-        $query = Ambition::query();
+    //     $query = Student::query();
+    //     $query = Ambition::query();
 
-        // 性別で検索する
-        $query->when($gender, function($query, $gender) { 
-            return $query->where('gender', $gender); 
-        });
+    //     // 性別で検索する
+    //     $query->when($gender, function($query, $gender) { 
+    //         return $query->where('gender', $gender); 
+    //     });
 
-        // 業界で検索する
-        $query->when($industry, function($query, $industry) { 
-            return $query->where('industry', $industry); 
-        });
+    //     // 業界で検索する
+    //     $query->when($industry, function($query, $industry) { 
+    //         return $query->where('industry', $industry); 
+    //     });
 
-        // 業種で検索する
-        $query->when($work, function($query, $work) { 
-            return $query->where('work', $work); 
-        });
+    //     // 業種で検索する
+    //     $query->when($work, function($query, $work) { 
+    //         return $query->where('work', $work); 
+    //     });
 
-        // 大学群で検索する
-        $query->when($univercity_group, function($query, $univercity_group) { 
-            return $query->where('univercity_group', $univercity_group);   
-        });
+    //     // 大学群で検索する
+    //     $query->when($univercity_group, function($query, $univercity_group) { 
+    //         return $query->where('univercity_group', $univercity_group);   
+    //     });
 
-        // 勤務地で検索する
-        $query->when($place, function($query, $place) { 
-            return $query->where('place', $place);   
-        });
+    //     // 勤務地で検索する
+    //     $query->when($place, function($query, $place) { 
+    //         return $query->where('place', $place);   
+    //     });
 
 
-        return $query->get();
+    //     return $query->get();
 
-    }
+    // }
 
    
     
     public function storeSearchPage(Request $request)
     {
+        // dd($request -> worklocation);
+        // dd($request);
         //viewから送られてくきたものが$requestの中に入ってきている
         // dd($request);
         // studentsテーブルからデータを全部取ってく。dd確認済み。
@@ -72,6 +74,7 @@ class SearchController extends Controller
     $place = $request->input('place');
     // studentテーブルのレコード数を確認,IDカラムの最大値を取ってくる
     $max_id = Student::max('id');
+    // dd($max_id);
 
     //配列を新しく定義、array();で空の配列を作る
     $student_narrows=array();
@@ -95,9 +98,12 @@ class SearchController extends Controller
         if(
             $array['work']==$work &&
             $array['gender']==$gender &&
-            $array['univercity_group']==$univercity_group
-            // ※他の検索項目も同様に作る 論理積&&を忘れないように
-            ){
+            $array['univercity_group']==$univercity_group &&
+            $array['industry']==$industry &&
+            $array['place']==$place 
+            //typeは学生データに入ってないので、ここには入れない。検索に引っ掛からなくなる。
+            //論理積&&を忘れないように
+        ){
                 array_push($student_narrows,$student);
             };
             //array_pushは電車に乗れる切符を持ってる状態。（）の中が乗るための電車を置いておこうね。1つ目のものに2つ目のものを入れますよって書き方。

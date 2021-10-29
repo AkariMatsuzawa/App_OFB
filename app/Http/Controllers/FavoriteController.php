@@ -35,7 +35,6 @@ class FavoriteController extends Controller
         Favorite::create([
             'company_id' => 1,
             'student_id' => 1,
-            'date' => '',
 
         ]);
         return view ('offerpage');

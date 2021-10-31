@@ -10,14 +10,14 @@
             <button>担当者情報</button>
         </div>
 
-        　<div class="logo">
+          <div class="logo">
             <p>企業ロゴ</p>
             <p>ロゴの写真設定</p>  
-        　</div>
+          </div>
 
           <div class="name">
             <p>企業名</p>
-            <div>{{ $company->nsme }}</div>
+            <div>{{ $company->name }}</div>
           </div>
 
           <div class="address">

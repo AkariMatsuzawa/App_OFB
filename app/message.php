@@ -8,7 +8,7 @@ class message extends Model
 {
     //
     protected $fillable = [
-        'company_id','student_id','text','date',
+        'company_id','student_id','text',
 
     ];
     public function company()

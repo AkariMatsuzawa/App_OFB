@@ -68,8 +68,8 @@
           ラインのような吹き出しをつけたい。企業からのメッセージ。
         </div>
     </div>
-
-    <form action="{{ route('chatpage.store') }}" method="POST">
+   
+    <form action="{{ route('chat_sendpage.store') }}" method="POST">
       @csrf
       <div class="post-box">
         <input type="text" name="chat" placeholder="メッセージ入力">
@@ -80,12 +80,11 @@
   </form>
 
     <div class="chat-wrapper">
-      @foreach($chats as $chat)
-      <div class="chat_box">
-        <div>{{ $chat->chat }}</div>
-      </div>
+      @foreach($chat as $chat)
+      <div>{{ $chat->chat }}</div>
       @endforeach
     </div>
+   
 
 
   @endsection

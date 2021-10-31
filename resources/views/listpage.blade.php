@@ -10,9 +10,10 @@
       写真入る
     </div>
     <div class="pro">
-    大学名
-    学部学科
-    性別：◯
+      {{ $student->univercity }}
+      {{ $student->faculty }}
+      {{ $student->subject }}
+      {{ $student->gender }}
     </div>
  </div>
 
@@ -33,21 +34,24 @@
  </div>
 
  <h3>研究内容</h3>
- <form action=""></form>
+ {{ $episode->reserch_content }}
 
  <h3>私の将来像</h3>
- <form action=""></form>
+ {{ $episode->future_image }}
 
  <h3>過去のエピソード1</h3>
- <form action=""></form>
+ {{ $episode->text1 }}
  <h3>過去のエピソード2</h3>
- <form action=""></form>
+ {{ $episode->text2 }}
  <h3>過去のエピソード3</h3>
- <form action=""></form>
+ {{ $episode->text3 }}
 
  <p>志望企業タイプ</p>
- <p>志望業界第1〜第3</p>
- <p>志望職種第1〜第3</p>
+ {{ $ambition->type }}
+ <p>志望業界</p>
+ {{ $ambition->industry }}
+ <p>志望職種</p>
+ {{ $ambition->work }}
 
  <form action="/offerpage" method="GET">
   @csrf
@@ -58,13 +62,13 @@
   <button  type='submit' class="favorite">検討する</button>
 </form>
 
-<div style="padding:10px 40px">
+{{-- <div style="padding:10px 40px">
 @if($student->likedBy(Auth::company())->count() > 0)
 <a href="/favorites/{{ $student->likedBy(Auth::company())->firstOrFail()->id }}">検討中取り消し</a>
 @else
 <a href="/students/{{ $student->id }}/favorites">検討中</a>
 @endif
-</div>
+</div> --}}
 
 
 

@@ -11,18 +11,36 @@ use Illuminate\Support\Facades\Auth;
 class ChatController extends Controller
 {
     //
-    public function storeChatpage(Request $request)
+    public function showChatPage()
+    {
+        // $id = Auth::id();
+
+        // Message::create([
+        //     'company_id' => $id,
+        //     'text' => $request->chat,
+        //     'student_id' => 1,
+        // ]);
+        $chats = Message::latest()->get();
+        // dd($chat);
+        return view ('chatpage', ['chats' => $chats]);
+        // return view ('chatpage');
+    }
+
+    public function storeChatPage(Request $request)
     {
         $id = Auth::id();
+        // $chat = Message::latest()->get();
+
+        $validator = $request->validate([
+            'chat' => ['required', 'string', 'max:280'],
+        ]);
 
         Message::create([
-            'company_id' => 1,
+            'company_id' => $id,
             'text' => $request->chat,
             'student_id' => 1,
-            'date' => '',
-
         ]);
-        return view ('chatpage');
+        return back();
     }
 }
 

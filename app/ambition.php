@@ -8,7 +8,7 @@ class ambition extends Model
 {
     //
     protected $fillable = [
-        'industry','work','place','type'];
+        'industry','work','type'];
 
     public function student()
     {

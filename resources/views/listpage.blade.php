@@ -34,6 +34,7 @@
  </div>
 
  <h3>研究内容</h3>
+ @foreach($episodes as $episode)
  {{ $episode->reserch_content }}
 
  <h3>私の将来像</h3>
@@ -45,13 +46,16 @@
  {{ $episode->text2 }}
  <h3>過去のエピソード3</h3>
  {{ $episode->text3 }}
+@endforeach
 
+@foreach($ambitions as $ambition)
  <p>志望企業タイプ</p>
  {{ $ambition->type }}
  <p>志望業界</p>
  {{ $ambition->industry }}
  <p>志望職種</p>
  {{ $ambition->work }}
+ @endforeach
 
  <form action="/offerpage" method="GET">
   @csrf

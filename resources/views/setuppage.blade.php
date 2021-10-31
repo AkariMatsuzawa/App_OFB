@@ -16,14 +16,17 @@
             <p>ロゴの写真設定</p>  
           </div>
 
+        <form action="/createpage" method="POST">
+          @csrf
+
           <div class="name">
             <p>企業名</p>
-            <form action=""><input type="text" name="name" ></form>
+            <input type="text" name="name" >
           </div>
 
           <div class="address">
             <p>住所</p>
-            <form action=""><input type="text" name="address"></form>
+            <input type="text" name="address">
           </div>
 
           <div class="listing_classification">
@@ -38,7 +41,7 @@
 
           <div class="place">
             <p>勤務地</p>
-            <form action=""><input type="text" name="place"></form>
+            <input type="text" name="place">
           </div>
 
           <div class="type">
@@ -64,19 +67,18 @@
 
           <div class="employees">
             <p>従業員数</p>
-            <form action=""><input type="text" name="employees"></form>
+            <input type="text" name="employees">
           </div>
           
           <div class="manager">
             <p>担当者名</p>
-            <form action=""><input type="text" name="manager"></form>
+            <input type="text" name="manager">
           </div>
 
           {{-- <button>設定</button> --}}
-          <form action="/createpage" method="POST">
-            @csrf
-            <button  type='submit' class="top_btn">設定する</button>
-          </form>
+          
+          <button  type='submit' class="top_btn">設定する</button>
+        </form>
     </div>
 
 

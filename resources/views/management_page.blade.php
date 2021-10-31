@@ -17,15 +17,21 @@
             写真入る
           </div>
           <div class="pro">
-          大学名
-          学部学科
-          性別：◯
+            {{ $student->name }}
+            {{ $student->univercity }}
+            {{ $student->faculty }}
+            {{ $student->subject }}
+            {{ $student->gender }}
           </div>
        </div>
       <div class="down">
-        <form action="/chatpage" method="GET">
+        {{-- <form action="/chatpage" method="GET">
           @csrf
           <button  type='submit' class="chat">メッセージ</button>
+        </form> --}}
+        <form action="/chatpage" method="GET">
+          @csrf
+          <button  type='submit' class="top_btn">メッセージ</button>
         </form>
       </div>
 </div>
@@ -35,17 +41,19 @@
             写真入る
           </div>
           <div class="pro">
-          大学名
-          学部学科
-          性別：◯
+            {{ $student->name }}
+            {{ $student->univercity }}
+            {{ $student->faculty }}
+            {{ $student->subject }}
+            {{ $student->gender }}
           </div>
        </div>
       <div class="down">
-          <div class="btn_detail">
-              <button >
-                メッセージ
-              </button>
-          </div> 
+        <form action="/chatpage" method="GET">
+          @csrf
+          <button  type='submit' class="top_btn">メッセージ</button>
+        </form>
+      </div>
       </div>
 </div>
  <div class="sum">
@@ -54,17 +62,19 @@
             写真入る
           </div>
           <div class="pro">
-          大学名
-          学部学科
-          性別：◯
+            {{ $student->name }}
+            {{ $student->univercity }}
+            {{ $student->faculty }}
+            {{ $student->subject }}
+            {{ $student->gender }}
           </div>
        </div>
       <div class="down">
-          <div class="btn_detail">
-            <button >
-              メッセージ
-            </button>
-        </div> 
+        <form action="/chatpage" method="GET">
+          @csrf
+          <button  type='submit' class="top_btn">メッセージ</button>
+        </form>
+      </div>
       </div>
 </div>
  <div class="sum">
@@ -73,17 +83,19 @@
             写真入る
           </div>
           <div class="pro">
-          大学名
-          学部学科
-          性別：◯
+            {{ $student->name }}
+            {{ $student->univercity }}
+            {{ $student->faculty }}
+            {{ $student->subject }}
+            {{ $student->gender }}
           </div>
        </div>
       <div class="down">
-          <div class="btn_detail">
-            <button >
-              メッセージ
-            </button>
-        </div> 
+        <form action="/chatpage" method="GET">
+          @csrf
+          <button  type='submit' class="top_btn">メッセージ</button>
+        </form>
+      </div>
       </div>
 </div>
  <div class="sum">
@@ -92,16 +104,19 @@
             写真入る
           </div>
           <div class="pro">
-          大学名
-          学部学科
-          性別：◯
+            {{ $student->name }}
+            {{ $student->univercity }}
+            {{ $student->faculty }}
+            {{ $student->subject }}
+            {{ $student->gender }}
           </div>
        </div>
       <div class="down">
-          <div class="btn_detail">
-            <button >
-              メッセージ
-            </button>
+        <form action="/chatpage" method="GET">
+          @csrf
+          <button  type='submit' class="top_btn">メッセージ</button>
+        </form>
+      </div>
         </div> 
       </div>
 </div>

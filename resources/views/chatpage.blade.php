@@ -82,7 +82,8 @@
     <div class="chat-wrapper">
       @foreach($chats as $chat)
       <div class="chat_box">
-        <div>{{ $chat->chat }}</div>
+        <div>{{ $chat->text }}</div>
+        {{-- $chatのテキストを表示 --}}
       </div>
       @endforeach
     </div>

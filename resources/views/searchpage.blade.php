@@ -23,7 +23,7 @@
               オファー数＜10/12＞
               検討中＜25＞
             </div>
-              <form action="/listpage" method="GET">
+              <form action="/listpage/{{ $student->id }}" method="GET">
                 @csrf
                 <button  type='submit' class="btn_details">詳細をみる</button>
               </form>

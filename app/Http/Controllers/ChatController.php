@@ -20,8 +20,13 @@ class ChatController extends Controller
         //     'text' => $request->chat,
         //     'student_id' => 1,
         // ]);
-        $chats = Message::latest()->get();
-        // dd($chat);
+        $chats = Message::orderBy('created_at', 'desc')->get();
+        //複数のデータを持ってくる＝chats
+
+        // $chat = Message::latest()->get();
+        //↑一つのデータを持ってくる、上に新しいデータを置く。一つなので$chat
+
+        // dd($chats);
         return view ('chatpage', ['chats' => $chats]);
         // return view ('chatpage');
     }
@@ -29,7 +34,6 @@ class ChatController extends Controller
     public function storeChatPage(Request $request)
     {
         $id = Auth::id();
-        // $chat = Message::latest()->get();
 
         $validator = $request->validate([
             'chat' => ['required', 'string', 'max:280'],
@@ -39,6 +43,7 @@ class ChatController extends Controller
             'company_id' => $id,
             'text' => $request->chat,
             'student_id' => 1,
+            'date' => date("Y/m/d H:i:s"),
         ]);
         return back();
     }

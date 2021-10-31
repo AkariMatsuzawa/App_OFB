@@ -48,6 +48,7 @@ class SendController extends Controller
             'company_id' => $id,
             'text' => $request->offer,
             'student_id' => 1,
+            'date' => date("Y/m/d H:i:s"),
 
         ]);
         return view ('sendpage');

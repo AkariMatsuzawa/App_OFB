@@ -12,7 +12,6 @@ class SetupController extends Controller
     //
     public function showSetupPage()
     {
-
         return view ('setuppage');
         // $companies = Company::latest()->get();
         // return view ('setuppage',['company' => $companies]);

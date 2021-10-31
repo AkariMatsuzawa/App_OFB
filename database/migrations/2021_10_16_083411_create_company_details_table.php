@@ -18,14 +18,14 @@ class CreateCompanyDetailsTable extends Migration
             $table->integer('company_id');
             $table->string('name');
             $table->string('address')->unique();
-            $table->string('phone')->unique();
+            // $table->string('phone')->unique();
             $table->string('listing_classification');
             $table->string('place');
             $table->string('industry');
             $table->string('type');
             $table->integer('employees');
             $table->string('manager');
-            $table->string('logo');
+            $table->string('logo')->nullable();
             $table->timestamps(); 
         });
     }

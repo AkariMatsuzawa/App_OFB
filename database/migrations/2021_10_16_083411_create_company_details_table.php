@@ -17,7 +17,7 @@ class CreateCompanyDetailsTable extends Migration
             $table->id();
             $table->integer('company_id');
             $table->string('name');
-            $table->string('address')->unique();
+            $table->string('address')->nullable();
             // $table->string('phone')->unique();
             $table->string('listing_classification');
             $table->string('place');

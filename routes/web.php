@@ -48,8 +48,4 @@ Route::post('/createpage', 'CreateController@storeCreatePage')->name('createpage
 //検討中を作成
 Route::get('students/{student_id}/favorites', 'FavoriteController@store');
 
-//検討中を取り消し
-Route::get('favorites/{favorite_id}', 'FavoriteController@destroy');
-
-
 

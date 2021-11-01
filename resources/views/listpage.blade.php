@@ -21,7 +21,7 @@
   @csrf
   <button  type='submit' class="offer">オファーする</button>
 </form>
- <form action="/" method="GET">
+ <form action="/listpage" method="GET">
   @csrf
   <button  type='submit' class="favorite">検討する</button>
 </form>
@@ -66,13 +66,14 @@
   <button  type='submit' class="favorite">検討する</button>
 </form>
 
-{{-- <div style="padding:10px 40px">
-@if($student->likedBy(Auth::company())->count() > 0)
-<a href="/favorites/{{ $student->likedBy(Auth::company())->firstOrFail()->id }}">検討中取り消し</a>
-@else
+<div style="padding:10px 40px">
+{{-- @if($student->likedBy(Auth::company())->count() > 0) --}}
+{{-- <a href="/favorites/{{ $student->likedBy(Auth::company())->firstOrFail()->id }}">検討中取り消し</a> --}}
+{{-- @else --}}
 <a href="/students/{{ $student->id }}/favorites">検討中</a>
-@endif
-</div> --}}
+{{ $student->favorites->count() }}
+{{-- @endif --}}
+</div>
 
 
 

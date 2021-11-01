@@ -48,10 +48,10 @@ class student extends Model
         return $this->hasMany('App\episode');
     }
 
-    public function likedBy($company)
-    {
-        return Favorite::where('company_id', $company->id)->where('student_id', $this->id);
-    }
+    // public function likedBy($company)
+    // {
+    //     return Favorite::where('company_id', $company->id)->where('student_id', $this->id);
+    // }
 
 
 }

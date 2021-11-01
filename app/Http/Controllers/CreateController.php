@@ -61,6 +61,9 @@ class CreateController extends Controller
         // Company::create([
         //     'name' => $user,
         // ]);
+        $company = Auth::user();
+
+        $company_details = $company->company_details;
 
         Company_details::create([
             'address' => $request->address,
@@ -74,6 +77,8 @@ class CreateController extends Controller
             'name' => $request->name,
 
         ]);
-        return back ();
+        // return back ();
+        // dd($request);
+        return view ('createpage',['company' => $company, 'company_details' => $company_details]);
     }
 }

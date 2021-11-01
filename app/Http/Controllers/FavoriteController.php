@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Favorite;
-use App\Student;
-use App\Company;
 use Illuminate\Support\Facades\Auth;
 
 class FavoriteController extends Controller
@@ -20,23 +18,25 @@ class FavoriteController extends Controller
 
     public function store(Request $request)
     {
-        dd($request->student_id);
+        // dd($request->student_id);
         $favorite = new Favorite();
-        $favorite->student_id = 1;
-        $favorite->company_id = 1;
+        $favorite->student_id = $request->student_id;
+        $favorite->company_id = Auth::user()->id;
         $favorite->save();
+        //createメソッドでも作れる
 
-        return redirect('offerpage');
+        return redirect('/listpage{student_id}');
+        //ただのlistpageじゃなくて学生idが必要なはず？
     }
-    public function showFavoritepage(Request $request)
-    {
-        $id = Auth::id();
+    // public function showFavoritepage(Request $request)
+    // {
+    //     $id = Auth::id();
 
-        Favorite::create([
-            'company_id' => 1,
-            'student_id' => 1,
+    //     Favorite::create([
+    //         'company_id' => 1,
+    //         'student_id' => 1,
 
-        ]);
-        return view ('offerpage');
-    }
+    //     ]);
+    //     return view ('offerpage');
+    // }
 }

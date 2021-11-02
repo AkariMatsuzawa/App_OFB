@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -61,9 +60,7 @@ class CreateController extends Controller
         // Company::create([
         //     'name' => $user,
         // ]);
-        $company = Auth::user();
-
-        $company_details = $company->company_details;
+        
 
         Company_details::create([
             'address' => $request->address,
@@ -77,8 +74,13 @@ class CreateController extends Controller
             'name' => $request->name,
 
         ]);
+        
+        $company = Auth::user();
+
+        $company_detail = $company->company_details;
+
         // return back ();
         // dd($request);
-        return view ('createpage',['company' => $company, 'company_details' => $company_details]);
+        return view ('createpage',['company' => $company, 'company_detail' => $company_detail]);
     }
 }

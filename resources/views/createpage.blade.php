@@ -20,42 +20,48 @@
             <div>{{ $company->name }}</div>
           </div>
 
-          @foreach($company_details as $company_detail)
+          {{-- ($company_details as $company_detail) --}}
           <div class="address">
             <p>住所</p>
-            <div>{{ $company_detail->address }}</div>
+            {{-- <div>{{ $company_detail->address }}</div> --}}
+            <div>{{optional($company_detail)->address}}</div>
           </div>
 
           <div class="listing_classification">
             <p>上場区分</p>
-            <div>{{ $company_detail->listing_classification }}</div>
+            {{-- <div>{{ $company_detail->listing_classification }}</div> --}}
+            <div>{{optional($company_detail)->listing_classification}}</div>
           </div>
 
           <div class="place">
             <p>勤務地</p>
-            <div>{{ $company_detail->place }}</div>
+            {{-- <div>{{ $company_detail->place }}</div> --}}
+            <div>{{optional($company_detail)->place}}</div>
           </div>
 
           <div class="type">
             <p>企業タイプ</p>
-            <div>{{ $company_detail->type }}</div>
+            {{-- <div>{{ $company_detail->type }}</div> --}}
+            <div>{{optional($company_detail)->type}}</div>
           </div>
 
           <div class="industry">
             <p>業界</p>
-            <div>{{ $company_detail->industry }}</div>
+            {{-- <div>{{ $company_detail->industry }}</div> --}}
+            <div>{{optional($company_detail)->industry}}</div>
           </div>
 
           <div class="employees">
             <p>従業員数</p>
-            <div>{{ $company_detail->employees }}</div>
+            {{-- <div>{{ $company_detail->employees }}</div> --}}
+            <div>{{optional($company_detail)->employees}}</div>
           </div>
           
           <div class="manager">
             <p>担当者名</p>
-            <div>{{ $company_detail->manager }}</div>
+            {{-- <div>{{ $company_detail->manager }}</div> --}}
+            <div>{{optional($company_detail)->manager}}</div>
           </div>
-          @endforeach
 
     </div>
 

@@ -25,7 +25,7 @@ class FavoriteController extends Controller
         $favorite->save();
         //createメソッドでも作れる
 
-        return redirect('/listpage{student_id}');
+        return redirect('/listpage/{favorite_id}');
         //ただのlistpageじゃなくて学生idが必要なはず？
     }
     // public function showFavoritepage(Request $request)

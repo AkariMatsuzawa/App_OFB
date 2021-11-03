@@ -29,7 +29,7 @@ class ManagementController extends Controller
             'company_id' => $id,
             'student_id' => 1,
             //オファーテーブルにいる学生idに変えないといけない
-            'name' => 1,
+            'name' => $student->name,
             'univercity' => $student->univercity,
             'faculty' => $student->faculty,
             'subject' => $student->subject,

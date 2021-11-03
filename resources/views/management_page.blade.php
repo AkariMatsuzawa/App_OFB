@@ -13,6 +13,7 @@
 
     <div class="sum">
       <div class="up">
+        @foreach ($student)
           <div class="pic">
             写真入る
           </div>
@@ -24,18 +25,62 @@
             {{ $student->gender }}
           </div>
        </div>
-      <div class="down">
-        {{-- <form action="/chatpage" method="GET">
-          @csrf
-          <button  type='submit' class="chat">メッセージ</button>
-        </form> --}}
-        <form action="/chatpage" method="GET">
-          @csrf
-          <button  type='submit' class="top_btn">メッセージ</button>
-        </form>
+        <div class="down">
+          {{-- <form action="/chatpage" method="GET">
+            @csrf
+            <button  type='submit' class="chat">メッセージ</button>
+          </form> --}}
+          <form action="/chatpage" method="GET">
+            @csrf
+            <button  type='submit' class="top_btn">メッセージ</button>
+          </form>
+        </div>
+    </div>
+  @endforeach
+
+    {{-- <div class="sum">
+      <div class="up">
+          <div class="pic">
+            写真入る
+          </div>
+          <div class="pro">
+            {{ $student->name }}
+            {{ $student->univercity }}
+            {{ $student->faculty }}
+            {{ $student->subject }}
+            {{ $student->gender }}
+          </div>
+       </div>
+        <div class="down">
+          <form action="/chatpage" method="GET">
+            @csrf
+            <button  type='submit' class="top_btn">メッセージ</button>
+          </form>
+        </div>
       </div>
-</div>
- <div class="sum">
+  </div>
+   <div class="sum">
+      <div class="up">
+          <div class="pic">
+            写真入る
+          </div>
+          <div class="pro">
+            {{ $student->name }}
+            {{ $student->univercity }}
+            {{ $student->faculty }}
+            {{ $student->subject }}
+            {{ $student->gender }}
+          </div>
+       </div>
+        <div class="down">
+          <form action="/chatpage" method="GET">
+            @csrf
+            <button  type='submit' class="top_btn">メッセージ</button>
+          </form>
+        </div>
+      </div>
+  </div>
+   <div class="sum">
       <div class="up">
           <div class="pic">
             写真入る
@@ -55,8 +100,8 @@
         </form>
       </div>
       </div>
-</div>
- <div class="sum">
+    </div>
+    <div class="sum">
       <div class="up">
           <div class="pic">
             写真入る
@@ -69,57 +114,15 @@
             {{ $student->gender }}
           </div>
        </div>
-      <div class="down">
-        <form action="/chatpage" method="GET">
-          @csrf
-          <button  type='submit' class="top_btn">メッセージ</button>
-        </form>
-      </div>
-      </div>
-</div>
- <div class="sum">
-      <div class="up">
-          <div class="pic">
-            写真入る
-          </div>
-          <div class="pro">
-            {{ $student->name }}
-            {{ $student->univercity }}
-            {{ $student->faculty }}
-            {{ $student->subject }}
-            {{ $student->gender }}
-          </div>
-       </div>
-      <div class="down">
-        <form action="/chatpage" method="GET">
-          @csrf
-          <button  type='submit' class="top_btn">メッセージ</button>
-        </form>
-      </div>
-      </div>
-</div>
- <div class="sum">
-      <div class="up">
-          <div class="pic">
-            写真入る
-          </div>
-          <div class="pro">
-            {{ $student->name }}
-            {{ $student->univercity }}
-            {{ $student->faculty }}
-            {{ $student->subject }}
-            {{ $student->gender }}
-          </div>
-       </div>
-      <div class="down">
-        <form action="/chatpage" method="GET">
-          @csrf
-          <button  type='submit' class="top_btn">メッセージ</button>
-        </form>
-      </div>
-        </div> 
-      </div>
-</div>
+        <div class="down">
+          <form action="/chatpage" method="GET">
+            @csrf
+            <button  type='submit' class="top_btn">メッセージ</button>
+          </form>
+        </div>
+      </div> 
+    </div>
+  </div> --}}
 
 
   @endsection

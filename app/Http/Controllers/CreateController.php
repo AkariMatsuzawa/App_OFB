@@ -76,8 +76,8 @@ class CreateController extends Controller
         ]);
         
         $company = Auth::user();
-
         $company_detail = $company->company_details;
+        //$companyと$company_detailはcreateの前に置いてしまうと読まれない。
 
         // return back ();
         // dd($request);

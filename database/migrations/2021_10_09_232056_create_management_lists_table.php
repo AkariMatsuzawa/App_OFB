@@ -18,8 +18,11 @@ class CreateManagementListsTable extends Migration
             $table->integer('company_id');
             $table->integer('student_id');
             $table->string('name');
-            $table->string('icon');
-            $table->string('birthplace');
+            $table->string('icon')->nullable();
+            $table->string('univercity');
+            $table->string('faculty');
+            $table->string('subject');
+            $table->string('gender');
             $table->timestamps();
         });
     }

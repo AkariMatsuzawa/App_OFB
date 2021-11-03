@@ -8,7 +8,7 @@ class management_list extends Model
 {
     //
     protected $fillable = [
-        'name', 'icon', 'birthplace',
+        'company_id','student_id','name', 'univercity', 'faculty','subject','gender',
         ];
 
 

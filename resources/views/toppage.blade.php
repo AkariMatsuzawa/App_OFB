@@ -133,10 +133,13 @@
                   <tr><td>オプション設定</td></tr> 
              </table>
              <form action="/management_page" method="GET">
+              {{-- <form action="/management/{{ $student->id }}" method="GET"> --}}
+                {{-- <a href="/management/{{ $student->id }}">選考管理リスト</a> --}}
+
                   @csrf
                   <button  type='submit' class="top_btn">選考管理リスト</button>
                 </form>
-
+                
                 <form action="/favorite_listpage" method="GET">
                   @csrf
                   <button  type='submit' class="favorite_list">検討中リスト</button>

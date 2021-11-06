@@ -21,19 +21,25 @@ class ManagementController extends Controller
         // $name = $request->input('name');
         // $subject = $request->input('subject');
         $id = Auth::id();
+        $company_id = Auth::id();
         
-        $student = Student::where('id',$id)->first();
+        // $student = Student::where('id',$id)->first();
         // dd($student);
+        $offer = Offer::find($id);
+        $student = Student::find($id);
+        
 
         Management_list::create([
-            'company_id' => $id,
-            'student_id' => 1,
+            // 'company_id' => $id,
+            // 'student_id' => 1,
             //オファーテーブルにいる学生idに変えないといけない
             'name' => $student->name,
             'univercity' => $student->univercity,
             'faculty' => $student->faculty,
             'subject' => $student->subject,
             'gender' => $student->gender,
+            'company_id' => $offer->company_id,
+            'student_id' => $offer->stundent_id、
         ]);
     
         //  $students = Student::find($id);
@@ -47,10 +53,32 @@ class ManagementController extends Controller
         //         'student_id'=>$student['id'],
         //         'id'=>$offer['id'],
         //     );
-
       return view ('management_page',['student' => $student,]);
       //見た目の反映のために全て記入
     }
-  }
-// }
+
+//     public function showManagement_Page(Request $request)
+//     {
+
+//         Management_list::create([
+//             'company_id' => Auth::user()->id,
+//             'student_id' => 1,
+//             //オファーテーブルにいる学生idに変えないといけない
+//             'name' => $request->name,
+//             'univercity' => $request->univercity,
+//             'faculty' => $request->faculty,
+//             'subject' => $request->subject,
+//             'gender' => $request->gender,
+
+//         ]);
+        
+//         $company = Auth::user();
+//         $id = Auth::id();
+//         $student = Student::where('id',$id)->first();
+
+//         return view ('management_page',['student' => $student]);
+//     }
+//   }
+
+}
 

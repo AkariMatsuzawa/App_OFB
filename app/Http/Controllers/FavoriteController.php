@@ -21,11 +21,13 @@ class FavoriteController extends Controller
         // dd($request->student_id);
         $favorite = new Favorite();
         $favorite->student_id = $request->student_id;
-        $favorite->company_id = Auth::user()->id;
+        // $favorite->company_id = Auth::user()->id;
+        $favorite->company_id = Auth::id();
         $favorite->save();
         //createメソッドでも作れる
 
-        return redirect('/listpage/{favorite_id}');
+        // return redirect('/listpage/{favorite_id}');
+        return redirect(route('list.show',['id'=>$request->student_id,]));
         //ただのlistpageじゃなくて学生idが必要なはず？
     }
     // public function showFavoritepage(Request $request)

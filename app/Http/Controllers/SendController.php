@@ -43,6 +43,8 @@ class SendController extends Controller
     {
         $id = Auth::id();
         //Authは認証機能（Authorizeの略）
+        // $students = Student::find($id);
+        //↑をすると、deteが違うってエラーが出てしまう
         
 
         Offer::create([

@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\student;
-use App\offer;
-use App\management_list;
+use App\Student;
+use App\Offer;
+use App\Company;
+use App\Management_list;
 use Illuminate\Support\Facades\Auth;
 
 class ManagementController extends Controller
@@ -14,71 +15,27 @@ class ManagementController extends Controller
 
     public function showManagement_Page()
     {
-
-        // $gender = $request->input('gender');
-        // $univercity = $request->input('univercity');
-        // $faculty = $request->input('faculty');
-        // $name = $request->input('name');
-        // $subject = $request->input('subject');
-        $id = Auth::id();
-        $company_id = Auth::id();
-        
-        // $student = Student::where('id',$id)->first();
-        // dd($student);
-        $offer = Offer::find($id);
-        $student = Student::find($id);
-        
-
-        Management_list::create([
-            // 'company_id' => $id,
-            // 'student_id' => 1,
-            //オファーテーブルにいる学生idに変えないといけない
-            'name' => $student->name,
-            'univercity' => $student->univercity,
-            'faculty' => $student->faculty,
-            'subject' => $student->subject,
-            'gender' => $student->gender,
-            'company_id' => $offer->company_id,
-            'student_id' => $offer->stundent_id、
-        ]);
-    
-        //  $students = Student::find($id);
+        $id = Offer::all('student_id');
+        $students = Student::find($id);
+        // dd($students);
+        // dd($id);
         // $max_id = Student::max('id');
-        // $student_narrows=array();
-        // for($id=1; $id<$max_id+1; $id++){
-        //     $offer = Offer::where('student_id',$id)->first();
-        //     $student = Student::where('id',$id)->first();
+        // $students = \App\Offer::find($id);
+        // dd($students);
 
-        //     $array = array(
-        //         'student_id'=>$student['id'],
-        //         'id'=>$offer['id'],
-        //     );
-      return view ('management_page',['student' => $student,]);
-      //見た目の反映のために全て記入
-    }
-
-//     public function showManagement_Page(Request $request)
-//     {
-
-//         Management_list::create([
-//             'company_id' => Auth::user()->id,
-//             'student_id' => 1,
-//             //オファーテーブルにいる学生idに変えないといけない
-//             'name' => $request->name,
-//             'univercity' => $request->univercity,
-//             'faculty' => $request->faculty,
-//             'subject' => $request->subject,
-//             'gender' => $request->gender,
-
-//         ]);
         
-//         $company = Auth::user();
-//         $id = Auth::id();
-//         $student = Student::where('id',$id)->first();
 
-//         return view ('management_page',['student' => $student]);
-//     }
-//   }
+           
+       
+        // for($id=1; $id<$max_id+1; $id++){
+        //     $student = Offer::where('student_id',$id)->first();
+            
+            
+
+        //  }        
+         return view ('management_page',['students' => $students,]);
+    
+    }
 
 }
 

@@ -11,9 +11,9 @@
       <button>内定</button>
   </div>
 
+  @foreach ($students as $student)
     <div class="sum">
       <div class="up">
-        @foreach ($student)
           <div class="pic">
             写真入る
           </div>

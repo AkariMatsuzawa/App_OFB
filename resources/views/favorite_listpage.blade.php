@@ -4,15 +4,17 @@
   <link rel="stylesheet" href="{{ asset('css/favorite_list.css') }}">
 
   <h2>検討中リスト一覧</h2>
+  @foreach ($students as $student)
    <div class="sum">
         <div class="up">
             <div class="pic">
               写真入る
             </div>
             <div class="pro">
-            大学名
-            学部学科
-            性別：◯
+              {{ $student->univercity }}
+              {{ $student->faculty }}
+              {{ $student->subject }}
+              {{ $student->gender }}
             </div>
          </div>
         <div class="down">
@@ -26,7 +28,9 @@
             </form>
         </div>
   </div>
-   <div class="sum">
+  @endforeach
+
+   {{-- <div class="sum">
         <div class="up">
             <div class="pic">
               写真入る
@@ -115,6 +119,6 @@
             </form>
         </div>
   </div>
-    
+     --}}
 
   @endsection

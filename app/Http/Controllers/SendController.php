@@ -43,6 +43,7 @@ class SendController extends Controller
     {
         $id = Auth::id();
         //Authは認証機能（Authorizeの略）
+        
 
         Offer::create([
             'company_id' => $id,

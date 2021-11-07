@@ -28,6 +28,7 @@ class OfferController extends Controller
         $student = Student::find($id);
         $episodes = $student->episodes;
         $ambitions = $student->ambitions;
+        // dd($student);
   
 
      return view ('offerpage',['student' => $student, 'episodes' => $episodes,'ambitions' => $ambitions,]);

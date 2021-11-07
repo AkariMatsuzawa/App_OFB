@@ -46,14 +46,17 @@ class SendController extends Controller
         //Authは認証機能（Authorizeの略）
        
         // $student_id = Student::all('id');
-        $students = Student::find('');
+        // $students = Student::find('');
+
         // dd($students);
         //datetimeがエラーになる。。
+
+        // dd($request->student_id);
 
         Offer::create([
             'company_id' => $id,
             'text' => $request->offer,
-            'student_id' => $students,
+            'student_id' => $request->student_id,
             'date' => date("Y/m/d H:i:s"),
 
         ]);

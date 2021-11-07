@@ -14,7 +14,7 @@ class ListController extends Controller
 {
     //
     public function showListPage(Request $request, $id)
-    //searchpageの{{ $student->id }}が$idに入っている。
+    //get送信で取ったsearchpageの{{ $student->id }}が$idに入っている。
     {
          
          $student = Student::find($id);

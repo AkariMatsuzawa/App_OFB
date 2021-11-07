@@ -54,6 +54,8 @@
             {{ $ambition->industry }}
             <p>志望職種第1〜第3</p>
             {{ $ambition->work }}
+            @endforeach 
+
 
             <button class="offer">オファーする</button>
             {{-- <button class="favorite">検討する</button> --}}
@@ -61,7 +63,7 @@
               @csrf
               <button  type='submit' class="btn_details">検討する</button>
             </form>
-            </div>
+          </div>
 
         <div class="right">
           <form action="/sendpage" method="POST">
@@ -75,6 +77,7 @@
     <form action="{{ route('sendpage.store') }}" method="POST">
       @csrf
       <div class="post-box">
+        <input type="hidden" name="student_id" value="{{ $student->id }}" />
         <input type="text" name="offer" placeholder="オファー文入力">
         <button type='submit' class="submit_btn">オファー送信</button>
       </div>

@@ -97,7 +97,7 @@
                     <option value="経理・法務">経理・法務</option>
                     <option value="企画・マーケティング">企画・マーケティング</option>
                     <option value="コンサルタント">コンサルタント</option>
-                    <option value="エンジニア・プログラミング">エンジニア・プログラマ</option>
+                    <option value="エンジニア・プログラマ">エンジニア・プログラマ</option>
                     <option value="生産・製造">生産・製造</option>
                     <option value="設計">設計</option>
                     <option value="施工管理">施工管理</option>

@@ -22,7 +22,8 @@
               オファー数＜10/12＞
               検討中＜25＞
             </div>
-            <form action="/offerpage" method="GET">
+            <form action="/offerpage/{{ $student->id }}" method="GET">
+              <input type="hidden" name="student_id" value="{{ $student->id }}" />
               @csrf
               <button  type='submit' class="offer">オファーする</button>
             </form>

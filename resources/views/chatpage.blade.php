@@ -70,6 +70,8 @@
     </div>
 
     <form action="{{ route('chatpage.store') }}" method="POST">
+      <input type="hidden" name="student_id" value="{{ $student_id }}" />
+      {{-- chatコントローラ34行目の'student_id' --}}
       @csrf
       <div class="post-box">
         <input type="text" name="chat" placeholder="メッセージ入力">

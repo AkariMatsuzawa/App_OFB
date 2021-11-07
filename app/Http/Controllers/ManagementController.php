@@ -15,14 +15,21 @@ class ManagementController extends Controller
 
     public function showManagement_Page()
     {
-        $id = Offer::all('student_id');
-        $students = Student::find($id);
+        $student_id = Offer::where('company_id', '=', Auth::id())
+          ->get(['student_id']);
+        $students = Student::find($student_id);
+        // dd($students);
+          
+
+        // $id = Offer::all('student_id');
+        // $students = Student::find($id);
+
         // dd($students);
         // dd($id);
         // $max_id = Student::max('id');
         // $students = \App\Offer::find($id);
         // dd($students);
-        $company = Auth::user();
+        // $company = Auth::user();
         
         
 

@@ -31,6 +31,7 @@
             <button  type='submit' class="chat">メッセージ</button>
           </form> --}}
           <form action="/chatpage" method="GET">
+            <input type="hidden" name="student_id" value="{{ $student->id }}" />
             @csrf
             <button  type='submit' class="top_btn">メッセージ</button>
           </form>

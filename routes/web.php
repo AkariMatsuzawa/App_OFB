@@ -25,7 +25,7 @@ Route::get('/toppage', 'TopController@showTopPage')->name('top.show');
 Route::post('/searchpage', 'SearchController@storeSearchPage')->name('searchpage.store');
 Route::get('/searchpage', 'SearchController@index')->name('searchpage.index');
 Route::get('/listpage/{id}', 'ListController@showListPage')->name('list.show');
-Route::get('/offerpage', 'OfferController@showOfferPage')->name('offerpage.show');
+Route::get('/offerpage/{id}', 'OfferController@showOfferPage')->name('offerpage.show');
 // Route::get('/testpage', 'TestController@editTestPage')->name('testpage.edit');
 Route::post('/sendpage', 'SendController@storeSendPage')->name('sendpage.store');
 Route::get('/favoritepage', 'FavoriteController@showFavoritePage')->name('favoritepage.show');

@@ -17,7 +17,7 @@
     </div>
  </div>
 
- <form action="/offerpage" method="GET">
+ <form action="/offerpage/{{ $student->id }}" method="GET">
   @csrf
   <button  type='submit' class="offer">オファーする</button>
 </form>
@@ -57,7 +57,7 @@
  {{ $ambition->work }}
  @endforeach
 
- <form action="/offerpage" method="GET">
+ <form action="/offerpage/{{ $student->id }}" method="GET">
   @csrf
   <button  type='submit' class="offer">オファーする</button>
 </form>

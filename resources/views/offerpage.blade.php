@@ -11,9 +11,10 @@
                   写真入る
                 </div>
                 <div class="pro">
-                大学名
-                学部学科
-                性別：◯
+                  {{ $student->univercity }}
+                  {{ $student->faculty }}
+                  {{ $student->subject }}
+                  {{ $student->gender }}
                 </div>
             </div>
 
@@ -32,21 +33,27 @@
             </div>
 
             <h3>研究内容</h3>
-            <form action=""></form>
+            @foreach($episodes as $episode)
+            {{ $episode->reserch_content }}
 
             <h3>私の将来像</h3>
-            <form action=""></form>
+            {{ $episode->future_image }}
 
             <h3>過去のエピソード1</h3>
-            <form action=""></form>
+            {{ $episode->text1 }}
             <h3>過去のエピソード2</h3>
-            <form action=""></form>
+            {{ $episode->text2 }}
             <h3>過去のエピソード3</h3>
-            <form action=""></form>
+            {{ $episode->text3 }}
+            @endforeach
 
+            @foreach($ambitions as $ambition)
             <p>志望企業タイプ</p>
+            {{ $ambition->type }}
             <p>志望業界第1〜第3</p>
+            {{ $ambition->industry }}
             <p>志望職種第1〜第3</p>
+            {{ $ambition->work }}
 
             <button class="offer">オファーする</button>
             {{-- <button class="favorite">検討する</button> --}}

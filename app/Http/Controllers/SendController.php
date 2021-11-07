@@ -42,15 +42,18 @@ class SendController extends Controller
     public function storeSendpage(Request $request)
     {
         $id = Auth::id();
+        // dd($id);
         //Authは認証機能（Authorizeの略）
-        // $students = Student::find($id);
-        //↑をすると、deteが違うってエラーが出てしまう
-        
+       
+        // $student_id = Student::all('id');
+        $students = Student::find('');
+        // dd($students);
+        //datetimeがエラーになる。。
 
         Offer::create([
             'company_id' => $id,
             'text' => $request->offer,
-            'student_id' => 1,
+            'student_id' => $students,
             'date' => date("Y/m/d H:i:s"),
 
         ]);

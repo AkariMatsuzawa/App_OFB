@@ -22,7 +22,8 @@ class ManagementController extends Controller
         // $max_id = Student::max('id');
         // $students = \App\Offer::find($id);
         // dd($students);
-
+        $company = Auth::user();
+        
         
 
            

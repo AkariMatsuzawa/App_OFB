@@ -20,15 +20,17 @@ class FavoriteController extends Controller
     {
         // dd($request->student_id);
         $favorite = new Favorite();
+        //新しいレコードを用意する。
         $favorite->student_id = $request->student_id;
-        // $favorite->company_id = Auth::user()->id;
+        //$requestのstudent_idを$favoriteのstudent_idにしている。
+        
         $favorite->company_id = Auth::id();
+        //梱包作業（24行目〜27行目）ログイン企業をfavoriteのcompany_idにしている。
         $favorite->save();
-        //createメソッドでも作れる
+        //発送、データベースに保存。
 
         // return redirect('/listpage/{favorite_id}');
         return redirect(route('list.show',['id'=>$request->student_id,]));
-        //ただのlistpageじゃなくて学生idが必要なはず？
     }
     // public function showFavoritepage(Request $request)
     // {

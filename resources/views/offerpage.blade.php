@@ -20,11 +20,11 @@
 
             <button class="offer">オファーする</button>
             {{-- <button class="favorite">検討する</button> --}}
-            <form action="/favoritepage" method="GET">
-              @csrf
-              <button  type='submit' class="btn_details">検討する</button>
-            </form>
-
+            <div style="padding:10px 40px">
+              <a href="/students/{{ $student->id }}/favorites">検討中</a>
+              {{ $student->favorites->count() }}
+            </div>
+            
             <div class="pic">
               任意で写真はいる
             </div>
@@ -59,19 +59,20 @@
 
             <button class="offer">オファーする</button>
             {{-- <button class="favorite">検討する</button> --}}
-            <form action="/favoritepage" method="GET">
-              @csrf
-              <button  type='submit' class="btn_details">検討する</button>
-            </form>
+            <div style="padding:10px 40px">
+              <a href="/students/{{ $student->id }}/favorites">検討中</a>
+              {{ $student->favorites->count() }}
+            </div>
+            
           </div>
 
-        <div class="right">
+        {{-- <div class="right">
           <form action="/sendpage" method="POST">
             @csrf
            <div class="form">
             <input type="text" name="offer">縦長フォームにしたい
             <button  type='submit' class="test">オファー送信</button>
-          </div>
+          </div> --}}
 
            {{-- 以下の（）内はルーティングに記載した名前。 --}}
     <form action="{{ route('sendpage.store') }}" method="POST">

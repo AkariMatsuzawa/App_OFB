@@ -21,10 +21,11 @@
   @csrf
   <button  type='submit' class="offer">オファーする</button>
 </form>
- <form action="/listpage" method="GET">
-  @csrf
-  <button  type='submit' class="favorite">検討する</button>
-</form>
+<div style="padding:10px 40px">
+  <a href="/students/{{ $student->id }}/favorites">検討中</a>
+  {{ $student->favorites->count() }}
+</div>
+
 
  <div class="pic">
    任意で写真はいる
@@ -60,10 +61,6 @@
  <form action="/offerpage/{{ $student->id }}" method="GET">
   @csrf
   <button  type='submit' class="offer">オファーする</button>
-</form>
- <form action="/" method="GET">
-  @csrf
-  <button  type='submit' class="favorite">検討する</button>
 </form>
 
 <div style="padding:10px 40px">

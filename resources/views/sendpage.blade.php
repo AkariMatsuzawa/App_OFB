@@ -44,8 +44,6 @@
     <form action="{{ route('sendpage.store') }}" method="POST">
       @csrf
       {{-- サニタイジング防止（Javascriotからの攻撃） --}}
-      {{-- <input type="text" name="text">
-      <button  type='submit' class="offer">トップへ</button> --}}
     </form>
     <form action="/toppage" method="GET">
       @csrf

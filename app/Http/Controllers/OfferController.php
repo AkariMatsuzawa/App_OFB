@@ -15,21 +15,11 @@ class OfferController extends Controller
 {
     //
     public function showOfferPage(Request $request, $id)
-    //get送信で取ってきた$id、
+    //get送信で取ってきた$id
     {
-        // 現在認証しているユーザーを取得。Authがuserなのが定型。$userでも問題なし。Authクラスのuserメソッドを使うという意味。
-        // $company = Auth::user();
-        // dd($user);
-
-        // 現在認証しているユーザーのIDを取得
-        // $id = Auth::id();
-        // dd($id);
-
         $student = Student::find($id);
         $episodes = $student->episodes;
         $ambitions = $student->ambitions;
-        // dd($student);
-  
 
      return view ('offerpage',['student' => $student, 'episodes' => $episodes,'ambitions' => $ambitions,]);
     }

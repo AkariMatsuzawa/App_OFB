@@ -16,7 +16,7 @@
                   {{ $student->subject }}
                   {{ $student->gender }}
                 </div>
-            </div>
+             </div>
 
             <button class="offer">オファーする</button>
             {{-- <button class="favorite">検討する</button> --}}
@@ -58,21 +58,12 @@
 
 
             <button class="offer">オファーする</button>
-            {{-- <button class="favorite">検討する</button> --}}
             <div style="padding:10px 40px">
               <a href="/students/{{ $student->id }}/favorites">検討中</a>
               {{ $student->favorites->count() }}
             </div>
             
           </div>
-
-        {{-- <div class="right">
-          <form action="/sendpage" method="POST">
-            @csrf
-           <div class="form">
-            <input type="text" name="offer">縦長フォームにしたい
-            <button  type='submit' class="test">オファー送信</button>
-          </div> --}}
 
            {{-- 以下の（）内はルーティングに記載した名前。 --}}
     <form action="{{ route('sendpage.store') }}" method="POST">
@@ -83,21 +74,4 @@
         <button type='submit' class="submit_btn">オファー送信</button>
       </div>
     </form>
-    {{-- <form action="/toppage" method="GET">
-        
-    </form> --}}
-
-    {{-- <div class="offer-wrapper">
-      @foreach($offers as $offer)
-      <div class="offer-box">
-        <div>{{ $offers->$offer }}</div>
-      </div>
-      <div class="destroy-btn">
-        <form action="{{ route('destroy', [$offer->id]) }}" method="post">
-      </div>
-      @csrf
-      <input type="submit" value="削除">
-    </form>
-    </div>
-    @endforeach --}}
   @endsection

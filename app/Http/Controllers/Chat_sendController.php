@@ -14,7 +14,6 @@ class Chat_sendController extends Controller
     public function showChat_sendPage()
     {
         $chat = Message::latest()->get();
-        // dd($chat);
         return view ('chat_sendpage', ['chat' => $chat]);
     }
 

@@ -52,16 +52,6 @@ class CreateController extends Controller
 
     public function storeCreatePage(Request $request)
     {
-        // dd($request);
-
-        // $user = Auth::user();
-        //Authは認証機能（Authorizeの略）
-
-        // Company::create([
-        //     'name' => $user,
-        // ]);
-        
-
         Company_details::create([
             'address' => $request->address,
             'listing_classification' => $request->listing_classification,
@@ -79,8 +69,6 @@ class CreateController extends Controller
         $company_detail = $company->company_details;
         //$companyと$company_detailはcreateの前に置いてしまうと読まれない。
 
-        // return back ();
-        // dd($request);
         return view ('createpage',['company' => $company, 'company_detail' => $company_detail]);
     }
 }

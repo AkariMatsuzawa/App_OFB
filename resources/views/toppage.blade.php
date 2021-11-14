@@ -1,15 +1,5 @@
-{{-- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>OfferBox</title>
-  <link rel="stylesheet" href="{{ asset('css/toppage.css') }}">
-</head> --}}
-@extends('layouts.app')
 
-{{-- <body> --}}
+@extends('layouts.app')
 @section('content')
 <link rel="stylesheet" href="{{ asset('css/toppage.css') }}">
   <div class="top">
@@ -105,13 +95,10 @@
                     </select>
                    </div>
 
-      {{-- </form> --}}
-
                     <br>
                     <br>
                     <br>
                     {{-- 検索ボタンを作る --}}
-                      {{-- <form action="/searchpage" method="POST"> --}}
                         @csrf
                         <button  type='submit' class="top_btn">検索する</button>
                       </form>
@@ -133,8 +120,6 @@
                   <tr><td>オプション設定</td></tr> 
              </table>
              <form action="/management_page" method="GET">
-              {{-- <form action="/management/{{ $student->id }}" method="GET"> --}}
-                {{-- <a href="/management/{{ $student->id }}">選考管理リスト</a> --}}
 
                   @csrf
                   <button  type='submit' class="top_btn">選考管理リスト</button>
@@ -154,6 +139,5 @@
     </div>
 　</div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-{{-- </body>
-</html> --}}
+
 @endsection

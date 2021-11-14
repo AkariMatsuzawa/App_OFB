@@ -12,7 +12,6 @@ use PHPUnit\Framework\MockObject\Builder\Stub;
 
 class ListController extends Controller
 {
-    //
     public function showListPage(Request $request, $id)
     //get送信で取ったsearchpageの{{ $student->id }}が$idに入っている。
     //ルーティングの/listpage/{id}は$idと同じ意味。
@@ -21,9 +20,7 @@ class ListController extends Controller
          $student = Student::find($id);
          $episodes = $student->episodes;
          //一人の学生が複数のエピソードを持てる。一番右のepisodesはstudentモデルのhasmanyで持っているepisodeのこと。
-
-        //  dd($episodes);
-        //  dd($student);
+         
          $ambitions = $student->ambitions;
          //episodeと同じく。
 

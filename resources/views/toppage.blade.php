@@ -5,7 +5,8 @@
   <div class="top">
     <div class="top-left">
       <form action="/searchpage" method="post">
-            @csrf
+        {{-- <input type="hidden" id="id" name="student_id" value="{{ $student }}" /> --}}
+            {{-- @csrf --}}
           <div class="login_date">
                 <p>ログイン日時</p>
                 <select name="login">
@@ -99,6 +100,7 @@
                     <br>
                     <br>
                     {{-- 検索ボタンを作る --}}
+                    
                         @csrf
                         <button  type='submit' class="top_btn">検索する</button>
                       </form>
@@ -137,7 +139,7 @@
 
 
     </div>
-　</div>
+  </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 @endsection

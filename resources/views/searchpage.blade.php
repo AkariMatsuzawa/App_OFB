@@ -18,17 +18,26 @@
               {{ $student->gender }}
             </div>
          </div>
+   
+        
+         
         <div class="down">
             <div class="pro">
-              オファー数＜10/12＞
-              検討中＜25＞
+              オファー数＜{{ $student->offers_count }}＞
+              検討中＜{{ $student->favorites_count }}＞
             </div>
+          
+          
               <form action="/listpage/{{ $student->id }}" method="GET">
                 @csrf
                 <button  type='submit' class="btn_details">詳細をみる</button>
               </form>
           </div> 
+          
+          
         </div>
   </div>
   @endforeach
+
+  
   @endsection

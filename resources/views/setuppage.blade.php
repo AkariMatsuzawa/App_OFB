@@ -74,8 +74,6 @@
             <p>担当者名</p>
             <input type="text" name="manager">
           </div>
-
-          {{-- <button>設定</button> --}}
           
           <button  type='submit' class="top_btn">設定する</button>
         </form>

@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -6,16 +7,34 @@ use App\Company;
 use App\Company_details;
 use Illuminate\Support\Facades\Auth;
 
-class CreateController extends Controller
+class CompleteController extends Controller
 {
-    public function showCreatePage()
+    //
+    public function showCompletePage()
     {
+        $details= Company_details::get();
+        
+        $company = Auth::user();
+        $company_detail = $company->company_details;
 
-        return view ('createpage');
+        return view ('completepage',['company' => $company, 'company_detail' => $company_detail, 'details' => $details,]);
+
+        // return view ('completepage');
      
     }
 
-    public function storeCreatePage(Request $request)
+    public function editCompletePage($id)
+    {
+        $details= Company_details::find($id);
+        
+        $company = Auth::user();
+        $company_detail = $company->company_details;
+
+        return view ('completepage',['company' => $company, 'company_detail' => $company_detail, 'details' => $details,]);
+     
+    }
+
+    public function updateCompletePage(Request $request)
     {
         Company_details::create([
             'address' => $request->address,
@@ -33,18 +52,6 @@ class CreateController extends Controller
         $company = Auth::user();
         $company_detail = $company->company_details;
         //$companyと$company_detailはcreateの前に置いてしまうと読まれない。
-
-        return view ('createpage',['company' => $company, 'company_detail' => $company_detail]);
-    }
-
-    public function updateCreatePage(Request $request, $id)
-    {
-        $company = Company::find($id);
-        $company_detail = Company_details::find($id);
-        dd($company);
-
-        $company -> name = $request -> name;
-        $company_detail -> address = $request ->address;
 
         return view ('createpage',['company' => $company, 'company_detail' => $company_detail]);
     }

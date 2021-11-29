@@ -22,6 +22,7 @@ class SearchController extends Controller
             ->where('industry', $request->industry)
             ->where('work', $request->work)
             ->where('place', $request->place);
+            //where系のメソッドは連続して呼ぶとAND条件となる。OR条件を指定する場合はメソッド名の先頭にorを付与して、orWhereなどとなる。その使い方で合っているはず？
         })
         //↑クエリ関数
         ->withcount('offers')
@@ -29,6 +30,6 @@ class SearchController extends Controller
         ->get();
             
             return view ('searchpage',['students' => $students]);
-        //'student'は今ここで初めて定義してる。$がないけど変数扱い。searchpageのURLに$student_narrowsを送る。（'student'を定義しないといけないというルールになってる）
+        //'student'は今ここで初めて定義してる。$がないけど変数扱い。
     }
 }

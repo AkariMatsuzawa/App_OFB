@@ -122,6 +122,7 @@
                   <tr><td>オプション設定</td></tr> 
              </table>
              <form action="/management_page" method="GET">
+              
 
                   @csrf
                   <button  type='submit' class="top_btn">選考管理リスト</button>
@@ -134,6 +135,7 @@
 
                 <form action="/setuppage" method="GET">
                   @csrf
+                  {{-- ここでcompany_detailsを送りたい --}}
                   <button  type='submit' class="setup">企業基本情報</button>
                 </form>
 

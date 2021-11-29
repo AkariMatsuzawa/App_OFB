@@ -26,11 +26,8 @@ Route::post('/searchpage', 'SearchController@storeSearchPage')->name('searchpage
 Route::get('/searchpage', 'SearchController@index')->name('searchpage.index');
 Route::get('/listpage/{id}', 'ListController@showListPage')->name('list.show');
 Route::get('/offerpage/{id}', 'OfferController@showOfferPage')->name('offerpage.show');
-// Route::get('/testpage', 'TestController@editTestPage')->name('testpage.edit');
-
 
 Route::get('/deletepage', 'DeleteController@showDeletePage')->name('deletepage.show');
-
 Route::delete('/deletepage', 'DeleteController@destroyDeletePage')->name('deletepage.destroy');
 
 
@@ -43,16 +40,21 @@ Route::post('/management_page', 'ManagementController@storeManagement_Page')->na
 Route::get('/chatpage', 'ChatController@showChatPage')->name('chatpage.show');
 Route::post('/chatpage', 'ChatController@storeChatPage')->name('chatpage.store');
 
-// Route::get('/chat_sendpage', 'Chat_sendController@showChat_sendPage')->name('chat_sendpage.show');
-// Route::post('/chat_sendpage', 'Chat_sendController@storeChat_sendPage')->name('chat_sendpage.store');
-
-
 Route::get('/setuppage', 'SetupController@showSetupPage')->name('setuppage.show');
 Route::post('/setuppage', 'SetupController@storeSetupPage')->name('setuppage.store');
 
-
 Route::get('/createpage', 'CreateController@getCreatePage')->name('createpage.get');
 Route::post('/createpage', 'CreateController@storeCreatePage')->name('createpage.store');
+Route::post('/createpage', 'CreateController@updateCreatePage')->name('createpage.update');
+
+Route::get('/renewpage', 'RenewController@showRenewPage')->name('renewpage.get');
+Route::put('/renewpage/{id}', 'RenewController@updateRenewPage')->name('renewpage.update');
+
+Route::get('/completepage', 'CompleteController@showCompletePage')->name('completepage.show');
+Route::get('/completepage/{id}/edit', 'CompleteController@editCompletePage')->name('completepage.edit');
+// Route::post('/completepage', 'CompleteController@storeCompletePage')->name('completepage.store');
+Route::put('/completepage', 'CompleteController@updateCompletePage')->name('completepage.update');
+
 
 //検討中を作成
 Route::get('students/{student_id}/favorites', 'FavoriteController@store');

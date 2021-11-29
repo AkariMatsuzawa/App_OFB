@@ -1,9 +1,7 @@
 @extends('layouts.app')
-  @section('content')
+@section('content')
 
-  <link rel="stylesheet" href="{{ asset('css/setup.css') }}">
-
-  <h2>基本設定</h2>
+<h2>基本設定</h2>
     <div class="all">
         <div class="info">
             <button>企業基本情報</button>
@@ -15,6 +13,7 @@
             <p>ロゴの写真設定</p>  
           </div>
 
+        
           <div class="name">
             <p>企業名</p>
             <div>{{ $company->name }}</div>
@@ -56,7 +55,10 @@
           </div>
 
     </div>
+          <form action="/completepage" method="GET">
+            @csrf
+          <button  type='submit' class="top_btn">編集する</button>
+          </form>
 
 
-
-  @endsection
+@endsection

@@ -45,14 +45,15 @@ Route::post('/setuppage', 'SetupController@storeSetupPage')->name('setuppage.sto
 
 Route::get('/createpage', 'CreateController@getCreatePage')->name('createpage.get');
 Route::post('/createpage', 'CreateController@storeCreatePage')->name('createpage.store');
-Route::put('/createpage', 'CreateController@updateCreatePage')->name('createpage.update');
+Route::post('/createpage', 'CreateController@updateCreatePage')->name('createpage.update');
+//updateはpost送信？
 // Route::get('/createpage/{id}/edit', 'CreateController@editCreatePage')->name('createpage.edit');
 
 Route::get('/renewpage', 'RenewController@showRenewPage')->name('renewpage.get');
 Route::put('/renewpage/{id}', 'RenewController@updateRenewPage')->name('renewpage.update');
 
 Route::get('/completepage', 'CompleteController@showCompletePage')->name('completepage.show');
-Route::get('/completepage/{id}/edit', 'CompleteController@editCompletePage')->name('completepage.edit');
+Route::get('/completepage/{company_id}/edit', 'CompleteController@editCompletePage')->name('completepage.edit');
 
 
 //検討中を作成

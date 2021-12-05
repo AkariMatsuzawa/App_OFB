@@ -55,13 +55,11 @@
           </div>
 
     </div>
-          {{-- <form action="/completepage/{{ $company->id }}" method="GET"> --}}
-          <form action="/completepage" method="GET">
-          {{-- //上記は回る --}}
+          {{-- <form action="/completepage" method="GET">
             @csrf
-            <input type="hidden" name="company_id" value="{{ $company->id }}" />
           <button  type='submit' class="top_btn">編集する</button>
-          </form>
+          </form> --}}
+          <a href="{{ route ('completepage.edit', $company->id) }}">編集する</a>
 
 
 @endsection

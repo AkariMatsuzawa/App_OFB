@@ -16,9 +16,10 @@
             <p>ロゴの写真設定</p>  
           </div>
 
-        <form action="/createpage" method="POST">
+        <form method="POST" action="{{ route('createpage.update') }}">
           @csrf
-          @method('put')
+          {{-- @method('put') --}}
+          <input type="hidden" name="company_id" value="{{ $company->id }}" >
 
           <div class="name">
             <p>企業名</p>

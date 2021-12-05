@@ -10,7 +10,6 @@ class CreateController extends Controller
 {
     public function showCreatePage()
     {
-
         return view ('createpage');
      
     }
@@ -36,27 +35,40 @@ class CreateController extends Controller
 
         return view ('createpage',['company' => $company, 'company_detail' => $company_detail]);
     }
-    public function editCompletePage($id)
-    {
-        dd($id);
-        $details= Company_details::find($id);
-        dd($details);
-        
-        $company = Auth::user();
-        $company_detail = $company->company_details;
 
-        return view ('completepage',['company' => $company, 'company_detail' => $company_detail, 'details' => $details,]);
+    // public function editCompletePage($id)
+    // {
+    //     // dd($id);
+    //     $details= Company_details::find($id);
+    //     // dd($details);
+        
+    //     $company = Auth::user();
+    //     $company_detail = $company->company_details;
+
+    //     return view ('completepage',['company' => $company, 'company_detail' => $company_detail, 'details' => $details,]);
+    //     //これ動いてないのでは…？
      
-    }
+    // }
 
     public function updateCreatePage(Request $request)
     {
-        // $company = Company::find($id);
-        // dd($company);
+        
+        // dd($request);
+        // "company_id" => "7"入ってる
+        // $company = $request->all();
+        //  dd($company);
+
+        // $company = Company::find($company_id);
+        $company_id = $request->company_id;
+        dd($company_id);
+        // "company_id" => "7"入ってる
+        
+    
+        $company_detail = Company_details::find($company_id);
+        dd($company_detail);
         
         $company = Auth::user();
-        
-        $company_detail = Company_details::find($company->id);
+        dd($company);
 
         $company -> name = $request -> name;
         $company_detail -> address = $request -> address;
@@ -65,6 +77,9 @@ class CreateController extends Controller
         $company_detail -> type = $request -> type;
         $company_detail -> employees = $request -> employees;
         $company_detail -> manager = $request -> manager;
+        $company -> save();
+        $company_detail -> save();
+
 
         return view ('createpage',['company' => $company, 'company_detail' => $company_detail]);
     }

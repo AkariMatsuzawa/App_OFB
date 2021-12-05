@@ -16,7 +16,7 @@
             <p>ロゴの写真設定</p>  
           </div>
 
-        <form action="{{ route('createpage', $company_detail->id) }}" method="POST">
+        <form action="/createpage" method="POST">
           @csrf
           @method('put')
 

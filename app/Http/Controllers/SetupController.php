@@ -12,19 +12,13 @@ class SetupController extends Controller
     //
     public function showSetupPage()
     {
-        $details= Company_details::where('company_id', '=', Auth::id())
-          ->get();
-        //   dd($details);
-
-        $details = true;
-        if(!$details){
-            return view ('setuppage');
+        $details = Company_details::where('company_id', '=', Auth::id())->exists();
+            if($details){
+                return redirect('renewpage');
+            }
+            else{
+                return view ('setuppage');
         }
-        else{
-            return redirect('renewpage');
-     }
-       
-        // return view ('setuppage',['details' => $details,]);
        
     }
 }

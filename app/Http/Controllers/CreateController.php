@@ -52,23 +52,33 @@ class CreateController extends Controller
 
     public function updateCreatePage(Request $request)
     {
-        
+        // dd($company_id);
         // dd($request);
-        // "company_id" => "7"入ってる
         // $company = $request->all();
         //  dd($company);
 
         // $company = Company::find($company_id);
-        $company_id = $request->company_id;
-        dd($company_id);
-        // "company_id" => "7"入ってる
+
+        // $company_id = $request->company_id;
+        // dd($company_id);
+
+        // ここまでOK
+        $company = Company::find(Auth::id());
+        // dd($company);
+
+        $company_detail = Company_details::where('company_id', '=', Auth::id())->first();
+        // dd($company_detail);
         
     
-        $company_detail = Company_details::find($company_id);
-        dd($company_detail);
+        // $company_detail = Company_details::find($company);
+        // $company_detail = Company_details::where('company_id', '=', Auth::id())
+        // ->get();;
+        // dd($company_detail);
+        //ここがダメ
         
-        $company = Auth::user();
-        dd($company);
+        // $company = Auth::user();
+        // dd($company);
+        //合っているはず
 
         $company -> name = $request -> name;
         $company_detail -> address = $request -> address;
@@ -79,6 +89,7 @@ class CreateController extends Controller
         $company_detail -> manager = $request -> manager;
         $company -> save();
         $company_detail -> save();
+        
 
 
         return view ('createpage',['company' => $company, 'company_detail' => $company_detail]);

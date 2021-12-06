@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Company_details;
+use App\Company;
 use Illuminate\Support\Facades\Auth;
 
 class RenewController extends Controller
@@ -18,11 +19,16 @@ class RenewController extends Controller
         //   $company_id = $details -> company_id;
 
         $company = Auth::user();
+        // $company = Company::where('id', '=', Auth::id())
+        // ->get();
+        // dd($company);
         $company_detail = $company->company_details;
         // dd($company_detail);
-        //$companyと$company_detailはcreateの前に置いてしまうと読まれない。
+        $company_id = $company_detail->company_id;
+        // dd($company_id);
+        
 
-        return view ('renewpage',['company' => $company, 'company_detail' => $company_detail, 'details' => $details,]);
+        return view ('renewpage',['company' => $company, 'company_detail' => $company_detail, 'details' => $details,'company_id' => $company_id,]);
        
     }
 }

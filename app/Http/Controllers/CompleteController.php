@@ -27,11 +27,17 @@ class CompleteController extends Controller
     public function editCompletePage($company_id)
     {
         // dd($company_id);
-        $details= Company_details::find($company_id);
-        // dd($details);
+        // $details= Company_details::where($company_id);
+        
+
+        $details = Company_details::where('company_id', '=', Auth::id())
+          ->get();
+        //   dd($details);
         
         $company = Auth::user();
         $company_detail = $company->company_details;
+        // dd($company_detail);
+        
 
         return view ('completepage',['company' => $company, 'company_detail' => $company_detail, 'details' => $details,]);
      

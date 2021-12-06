@@ -19,7 +19,7 @@
         <form method="POST" action="{{ route('createpage.update') }}">
           @csrf
           {{-- @method('put') --}}
-          <input type="hidden" name="company_id" value="{{ $company->id }}" >
+          <input type="hidden" name="company_id" value="{{ $company_detail->company_id }}" >
 
           <div class="name">
             <p>企業名</p>

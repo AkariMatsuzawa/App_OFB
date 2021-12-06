@@ -59,7 +59,7 @@
             @csrf
           <button  type='submit' class="top_btn">編集する</button>
           </form> --}}
-          <a href="{{ route ('completepage.edit', $company->id) }}">編集する</a>
+          <a href="{{ route ('completepage.edit', $company_id) }}">編集する</a>
 
 
 @endsection

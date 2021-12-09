@@ -8,14 +8,6 @@ use Illuminate\Support\Facades\Auth;
 
 class FavoriteController extends Controller
 {
-    //
-    // public function showFavoritePage()
-    // {
-    //     return view ('favoritepage');
-    // }
-
-
-
     public function store(Request $request)
     {
         $favorite = new Favorite();

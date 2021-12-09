@@ -16,7 +16,7 @@
             <p>ロゴの写真設定</p>  
           </div>
 
-        <form action="/createpage" method="POST">
+        <form action="/createpage/store" method="POST">
           @csrf
 
           <div class="name">

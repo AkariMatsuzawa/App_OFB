@@ -31,54 +31,17 @@ class CreateController extends Controller
         
         $company = Auth::user();
         $company_detail = $company->company_details;
-        //$companyと$company_detailはcreateの前に置いてしまうと読まれない。
+
 
         return view ('createpage',['company' => $company, 'company_detail' => $company_detail]);
     }
 
-    // public function editCompletePage($id)
-    // {
-    //     // dd($id);
-    //     $details= Company_details::find($id);
-    //     // dd($details);
-        
-    //     $company = Auth::user();
-    //     $company_detail = $company->company_details;
-
-    //     return view ('completepage',['company' => $company, 'company_detail' => $company_detail, 'details' => $details,]);
-    //     //これ動いてないのでは…？
-     
-    // }
-
     public function updateCreatePage(Request $request)
     {
-        // dd($company_id);
-        // dd($request);
-        // $company = $request->all();
-        //  dd($company);
-
-        // $company = Company::find($company_id);
-
-        // $company_id = $request->company_id;
-        // dd($company_id);
-
-        // ここまでOK
         $company = Company::find(Auth::id());
-        // dd($company);
 
-        $company_detail = Company_details::where('company_id', '=', Auth::id())->first();
-        // dd($company_detail);
-        
-    
-        // $company_detail = Company_details::find($company);
-        // $company_detail = Company_details::where('company_id', '=', Auth::id())
-        // ->get();;
-        // dd($company_detail);
-        //ここがダメ
-        
-        // $company = Auth::user();
-        // dd($company);
-        //合っているはず
+        $company_detail = Company_details::where('company_id', '=', Auth::id())
+        ->first();
 
         $company -> name = $request -> name;
         $company_detail -> address = $request -> address;
@@ -90,8 +53,6 @@ class CreateController extends Controller
         $company -> save();
         $company_detail -> save();
         
-
-
         return view ('createpage',['company' => $company, 'company_detail' => $company_detail]);
     }
 }

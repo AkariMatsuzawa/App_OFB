@@ -14,19 +14,10 @@ class RenewController extends Controller
     {
         $details= Company_details::where('company_id', '=', Auth::id())
           ->get();
-        //   dd($details);
-
-        //   $company_id = $details -> company_id;
 
         $company = Auth::user();
-        // $company = Company::where('id', '=', Auth::id())
-        // ->get();
-        // dd($company);
         $company_detail = $company->company_details;
-        // dd($company_detail);
         $company_id = $company_detail->company_id;
-        // dd($company_id);
-        
 
         return view ('renewpage',['company' => $company, 'company_detail' => $company_detail, 'details' => $details,'company_id' => $company_id,]);
        

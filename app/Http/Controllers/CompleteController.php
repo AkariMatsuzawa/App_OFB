@@ -9,35 +9,14 @@ use Illuminate\Support\Facades\Auth;
 
 class CompleteController extends Controller
 {
-    //
-    // public function showCompletePage($id)
-    // {
-    //     dd($id);
-    //     $details= Company_details::get();
-        
-    //     $company = Auth::user();
-    //     $company_detail = $company->company_details;
-
-    //     return view ('completepage',['company' => $company, 'company_detail' => $company_detail, 'details' => $details,]);
-
-    //     // これまだ動いていない
-     
-    // }
-
     public function editCompletePage($company_id)
     {
-        // dd($company_id);
-        // $details= Company_details::where($company_id);
-        
-
         $details = Company_details::where('company_id', '=', Auth::id())
           ->get();
-        //   dd($details);
+
         
         $company = Auth::user();
         $company_detail = $company->company_details;
-        // dd($company_detail);
-        
 
         return view ('completepage',['company' => $company, 'company_detail' => $company_detail, 'details' => $details,]);
      

@@ -7,7 +7,7 @@ use App\Offer;
 
 class TestController extends Controller
 {
-    //
+    
     public function editTestPage()
     {
         return view ('testpage');

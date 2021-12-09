@@ -44,7 +44,7 @@ Route::get('/setuppage', 'SetupController@showSetupPage')->name('setuppage.show'
 Route::post('/setuppage', 'SetupController@storeSetupPage')->name('setuppage.store');
 
 Route::get('/createpage', 'CreateController@getCreatePage')->name('createpage.get');
-Route::post('/createpage', 'CreateController@storeCreatePage')->name('createpage.store');
+Route::post('/createpage/store', 'CreateController@storeCreatePage')->name('createpage.store');
 Route::post('/createpage', 'CreateController@updateCreatePage')->name('createpage.update');
 //updateはpost送信？
 // Route::get('/createpage/{id}/edit', 'CreateController@editCreatePage')->name('createpage.edit');
@@ -58,5 +58,3 @@ Route::get('/completepage/{company_id}/edit', 'CompleteController@editCompletePa
 
 //検討中を作成
 Route::get('students/{student_id}/favorites', 'FavoriteController@store');
-
-
